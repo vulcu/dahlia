@@ -1,5 +1,5 @@
 # Dahlia - Waveshaping Synthesis for the Daisy Platform
-Dahlia is a Waveshaping Polyphonic Synthesis for the Daisy Platform. It is based on the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) project written in Pure Data, and cross-compiled to the Daisy platorm using [pd2dsy](https://github.com/electro-smith/pd2dsy) and the [Heavy Compiler Collection](https://github.com/enzienaudio/hvcc).
+Dahlia is a waveshaping polyphonic synthesizer for the [Daisy Audio Platform](https://www.electro-smith.com/daisy). It is based on the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) project written in Pure Data, and cross-compiled to the Daisy platorm using [pd2dsy](https://github.com/electro-smith/pd2dsy) and the [Heavy Compiler Collection](https://github.com/enzienaudio/hvcc).
 
 The overarching goal of placing it in an embedded platform is to make an instrument which sits halfway between playable and generative synthesizer, allowing people without a background in music to create complex compositional patterns by through interaction with a limited and intuitive control set.
 
