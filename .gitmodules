@@ -1,0 +1,4 @@
+
+[submodule "lib/heavylib"]
+	path = lib/heavylib
+	url = https://github.com/enzienaudio/heavylib.git
