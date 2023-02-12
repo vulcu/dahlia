@@ -10,6 +10,15 @@ The overarching goal of placing it in an embedded platform is to make an instrum
 * [References](#references)
 
 ## General Info ##
+Installation (Python >=3.7)
+```shell
+py -m ensurepip -U
+py -m pip install virtualenv
+pip -m venv ./.venv
+source ./.venv/Scripts/activate
+pip install hvcc
+```
+
 The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. How much of that will carry over to the Daisy platform is yet to be assessed.
 
 ## General Info
