@@ -1,0 +1,9 @@
+# Python Virtual Environment
+.venv/
+
+# HVCC Intermediate Files
+src/hv/
+src/ir/
+
+# HVCC Output Files
+src/c/
