@@ -2,3 +2,6 @@
 [submodule "lib/heavylib"]
 	path = lib/heavylib
 	url = https://github.com/enzienaudio/heavylib.git
+[submodule "lib/pd2dsy"]
+	path = lib/pd2dsy
+	url = https://github.com/electro-smith/pd2dsy.git
