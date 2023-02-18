@@ -9,7 +9,7 @@
 #X msg 152 77 1;
 #X obj 152 100 -, f 6;
 #X obj 152 54 t b f, f 6;
-#X obj 26 47 soft_limiter;
+#X obj 26 47 soft_limit;
 #X connect 0 0 10 0;
 #X connect 1 0 5 1;
 #X connect 1 0 9 0;

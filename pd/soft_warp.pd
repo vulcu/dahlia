@@ -8,7 +8,7 @@
 #X obj 175 35 inlet;
 #X obj 85 120 + 1;
 #X obj 46 192 outlet~;
-#X obj 46 59 soft_limiter;
+#X obj 46 59 soft_limit;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
