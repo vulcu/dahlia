@@ -5,7 +5,7 @@
 #X obj 34 48 clip~ -2 2;
 #X obj 33 24 inlet~;
 #X obj 33 156 outlet~;
-#X obj 94 86 pow~ 3;
+#X obj 94 86 pow_3;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 5 0;
