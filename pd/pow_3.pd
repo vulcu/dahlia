@@ -1,10 +1,10 @@
-#N canvas 1510 698 307 217 12;
-#X obj 55 43 inlet~;
-#X obj 73 93 *~;
-#X obj 55 117 *~;
+#N canvas 780 396 307 217 12;
+#X obj 74 93 *~;
+#X obj 56 117 *~;
 #X obj 56 142 outlet~;
-#X connect 0 0 1 0;
+#X obj 55 43 inlet~ Audio;
 #X connect 0 0 1 1;
-#X connect 0 0 2 0;
-#X connect 1 0 2 1;
-#X connect 2 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 3 0 0 1;
+#X connect 3 0 1 0;
