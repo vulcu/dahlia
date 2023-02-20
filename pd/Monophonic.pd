@@ -1,4 +1,4 @@
-#N canvas 1419 663 579 305 10;
+#N canvas 1308 617 579 305 10;
 #X obj 113 232 hip~ 22;
 #X obj 113 255 outlet~;
 #X obj 43 31 inlet MidiPitchVelADSR;
@@ -8,7 +8,7 @@
 #X obj 43 57 unpack f f f f f f f f f f f f f;
 #X obj 30 120 portamento;
 #X obj 113 185 Voice, f 32;
-#X obj 113 209 soft_limiter;
+#X obj 113 209 soft_limit;
 #X connect 0 0 1 0;
 #X connect 2 0 6 0;
 #X connect 3 0 8 1;
