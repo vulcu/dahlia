@@ -1,4 +1,4 @@
-#N canvas 1308 617 579 305 10;
+#N canvas 780 397 579 305 10;
 #X obj 113 232 hip~ 22;
 #X obj 113 255 outlet~;
 #X obj 43 31 inlet MidiPitchVelADSR;
