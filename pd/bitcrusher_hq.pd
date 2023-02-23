@@ -1,0 +1,9 @@
+#N canvas 779 396 306 219 12;
+#X obj 59 152 outlet~;
+#X obj 58 44 inlet~ Audio;
+#X text 68 127 Not HVCC compatible;
+#X obj 59 101 expr~ int($v1);
+#X text 68 80 overhead quantization;
+#X text 68 66 Higher-quality lower;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
