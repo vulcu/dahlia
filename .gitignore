@@ -1,9 +1,12 @@
+# Test Environment
+.test/
+
 # Python Virtual Environment
 .venv/
+
+# HVCC Generated Source Files
+src/c/
 
 # HVCC Intermediate Files
 src/hv/
 src/ir/
-
-# HVCC Output Files
-src/c/
