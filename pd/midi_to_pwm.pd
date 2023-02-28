@@ -1,0 +1,8 @@
+#N canvas 779 396 302 173 12;
+#X obj 36 22 inlet MidiValue;
+#X obj 36 57 / 282;
+#X obj 36 91 + 0.25;
+#X obj 36 124 outlet PWMDutyCycle;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
