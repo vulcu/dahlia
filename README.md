@@ -39,8 +39,10 @@ make clean | grep "warningr:\|error:"
 make -j4 | grep "warning:r\|error:"
 cd ../../..
 ```
-7. If there's no errors from the above, then everything Dahlia needs is ready to go.
-
+7. If there's no errors from the above, then everything Dahlia needs is ready to go. As a test, the code can be compiled using hvcc:
+```bash
+source ./dahlia-hvcc.sh
+```
 
 ## General Info
 This project is a synthesizer not quite like any other. It relies on a handful of waveshaping algorithms to produce differing kinds of overdrive and distortion from the oscillators of each synthesizer voice, and then applies an ADS-envelope low-pass filter to each voice on an individual basis. The harmonic ratios and the balance between even and odd harmonics varies by algorithm, with some sounding better than others for certain oscillator and envelope combinations. There's no hard-and-fast rules here, so just use your ears.
@@ -83,4 +85,4 @@ This project uses the following algorithms for waveshaping and signal limiting:
  4) Yates, R. and Lyons, R., 2008, 'DC Blocker Algorithms' IEEE Signal Processing Magazine, March 2008, pp. 132-134
 
 ## 
-(C) 2021-2022, Winry R. Litwa-Vulcu
+(C) 2021-2023, Winry R. Litwa-Vulcu
