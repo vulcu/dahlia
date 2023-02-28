@@ -11,7 +11,7 @@
 #X obj 35 27 inlet~ Audio;
 #X obj 129 27 inlet RectifyControl;
 #X obj 34 206 lowpass_filter;
-#X obj 35 52 soft_limit;
+#X obj 35 52 soft_clip;
 #X connect 1 0 3 0;
 #X connect 2 0 4 1;
 #X connect 3 0 4 0;
