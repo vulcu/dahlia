@@ -8,7 +8,7 @@
 #X obj 43 57 unpack f f f f f f f f f f f f f;
 #X obj 30 120 portamento;
 #X obj 113 185 Voice, f 32;
-#X obj 113 209 soft_limit;
+#X obj 113 209 soft_clip;
 #X connect 0 0 1 0;
 #X connect 2 0 6 0;
 #X connect 3 0 8 1;
