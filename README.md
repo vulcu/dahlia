@@ -12,6 +12,19 @@ The overarching goal of placing it in an embedded platform is to make an instrum
 ## General Info
 The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is a simplified version of this, with the controls modified to accomodate the limited Daisy Pod UI.
 
+## Daisy Pod I/O (Configured)
+| Name | Function | Type | Variants |
+| --- | --- | --- | --- |
+| sw1 | _unassigned_ | Switch | sw1_press, sw1_fall, sw1_seconds |
+| sw2 | _unassigned_ | Switch | sw2_press, sw2_fall, sw2_seconds |
+| knob1 | _unassigned_ | Voltage Input | --- |
+| knob2 | _unassigned_ | Voltage Input | --- |
+| encoder | _Preset Selection (0-15)_ | Encoder | encoder_press, encoder_rise, encoder_fall, encoder_seconds |
+| led1 | _unassigned_ | RGB LED | led1_red, led1_green, led1_blue, led1_white |
+| led2 | _unassigned_ | RGB LED | led2_red, led2_green, led2_blue, led2_white |
+| gatein | _unassigned_ | Gate In | gatein_trig |
+| --- | Volume | Potentiometer | --- |
+
 #### Installation
 1. Follow the instructions for [installing the Daisy Toolchain for your OS](https://github.com/electro-smith/DaisyWiki/wiki/1.-Setting-Up-Your-Development-Environment#1-install-the-toolchain)
 1. Install python for your OS (requires Python >=3.7)
