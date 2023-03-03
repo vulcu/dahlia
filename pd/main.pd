@@ -1,4 +1,4 @@
-#N canvas 133 61 1416 1078 10;
+#N canvas 159 142 1416 1078 10;
 #X obj 456 28 ctlin, f 12;
 #X obj 30 28 notein, f 34;
 #X obj 242 28 bendin, f 18;
@@ -129,6 +129,136 @@ f;
 0;
 #X obj 134 944 cnv 15 15 15 empty empty ok 2 7 0 10 #00d705 #3e3e3e
 0;
+#X obj 783 164 r \$0-encoder-positive;
+#X floatatom 783 207 4 0 0 0 - - - 0;
+#X obj 919 164 r \$0-encoder-negative;
+#X obj 783 185 encoder_index, f 46;
+#X obj 1056 143 loadbang;
+#X obj 936 206 r \$0-sw1_press;
+#X obj 1029 206 r \$0-sw2_press;
+#X obj 819 206 r \$0-encoder_press;
+#X obj 819 226 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 936 226 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 1029 226 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#N canvas 437 208 478 271 Daisy-Pod-UI-Sim 0;
+#X obj 20 26 cnv 15 300 70 empty empty Daisy\\\ Pod 4 60 0 14 #202020
+#dfdfdf 0;
+#X obj 42 50 tgl 15 0 empty \$0-sw1_press empty 17 7 0 10 #202020 #ff0400
+#dfdfdf 0 1;
+#X obj 27 50 bng 15 250 50 0 \$0-sw1 empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 27 40 tgl 10 0 empty \$0-led1_red empty 17 7 0 10 #ff534f #000000
+#000000 0 1;
+#X obj 37 40 tgl 10 0 empty \$0-led1_green empty 17 7 0 10 #46ff4a
+#000000 #000000 0 1;
+#X obj 47 40 tgl 10 0 empty \$0-led1_blue empty 17 7 0 10 #5e59ff #000000
+#000000 0 1;
+#X obj 96 40 hsl 64 25 0 1 0 1 \$0-knob1 empty empty -2 -8 0 10 #feac01
+#000000 #000000 3250 1;
+#X obj 168 40 hsl 64 25 0 1 0 1 \$0-knob2 empty empty -2 -8 0 10 #feac01
+#000000 #000000 3258 1;
+#X obj 75 50 tgl 15 0 empty \$0-sw2_press empty 17 7 0 10 #202020 #ff0400
+#dfdfdf 0 1;
+#X obj 60 50 bng 15 250 50 0 \$0-sw2 empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 60 40 tgl 10 0 empty \$0-led2_red empty 17 7 0 10 #ff534f #000000
+#000000 0 1;
+#X obj 70 40 tgl 10 0 empty \$0-led2_green empty 17 7 0 10 #46ff4a
+#000000 #000000 0 1;
+#X obj 80 40 tgl 10 0 empty \$0-led2_blue empty 17 7 0 10 #5e59ff #000000
+#000000 0 1;
+#X obj 237 40 cnv 15 76 39 \$0-encoder-negative empty empty 20 12 0
+14 #9f9f9f #000000 0;
+#X obj 291 44 bng 15 250 50 0 \$0-encoder-positive empty empty 17 7
+0 10 #fcfcfc #000000 #000000;
+#X obj 267 60 tgl 15 0 empty \$0-encoder_press empty 17 7 0 10 #9f9f9f
+#ff0400 #ffffff 0 1;
+#X obj 267 44 bng 15 250 50 0 \$0-encoder empty empty 17 7 0 10 #ffffff
+#000000 #000000;
+#X obj 243 44 bng 15 250 50 0 \$0-encoder-negative empty empty 17 7
+0 10 #fcfcfc #000000 #000000;
+#X text 289 59 +1;
+#X text 242 59 -1;
+#X obj 20 20 cnv 15 300 17 empty empty sw1\\\ sw2\\\ \\\ knob1\\\ \\\ \\\ knob2\\\ \\\ \\\ encoder
+10 8 0 14 #606060 #dfdfdf 0;
+#X obj 60 130 delay 500 1 msec;
+#X obj 21 104 r \$0-sw1;
+#X obj 21 203 *, f 9;
+#X msg 87 180 0;
+#X msg 54 180 1;
+#X msg 21 180 1;
+#X obj 21 150 t b b;
+#X obj 60 150 t b b;
+#X obj 21 224 s \$0-sw1_press;
+#X obj 204 131 delay 500 1 msec;
+#X obj 165 204 *, f 9;
+#X msg 231 181 0;
+#X msg 198 181 1;
+#X msg 165 181 1;
+#X obj 165 151 t b b;
+#X obj 204 151 t b b;
+#X obj 165 105 r \$0-sw2;
+#X obj 165 225 s \$0-sw2_press;
+#X obj 348 133 delay 500 1 msec;
+#X obj 309 206 *, f 9;
+#X msg 375 183 0;
+#X msg 342 183 1;
+#X msg 309 183 1;
+#X obj 309 153 t b b;
+#X obj 348 153 t b b;
+#X obj 309 107 r \$0-encoder;
+#X obj 309 227 s \$0-encoder_press;
+#X connect 21 0 28 0;
+#X connect 22 0 27 0;
+#X connect 22 0 21 0;
+#X connect 23 0 29 0;
+#X connect 24 0 23 1;
+#X connect 25 0 23 1;
+#X connect 26 0 23 0;
+#X connect 27 0 26 0;
+#X connect 27 1 25 0;
+#X connect 28 0 26 0;
+#X connect 28 1 24 0;
+#X connect 30 0 36 0;
+#X connect 31 0 38 0;
+#X connect 32 0 31 1;
+#X connect 33 0 31 1;
+#X connect 34 0 31 0;
+#X connect 35 0 34 0;
+#X connect 35 1 33 0;
+#X connect 36 0 34 0;
+#X connect 36 1 32 0;
+#X connect 37 0 35 0;
+#X connect 37 0 30 0;
+#X connect 39 0 45 0;
+#X connect 40 0 47 0;
+#X connect 41 0 40 1;
+#X connect 42 0 40 1;
+#X connect 43 0 40 0;
+#X connect 44 0 43 0;
+#X connect 44 1 42 0;
+#X connect 45 0 43 0;
+#X connect 45 1 41 0;
+#X connect 46 0 44 0;
+#X connect 46 0 39 0;
+#X coords 0 -1 1 1 300 77 2 20 20;
+#X restore 918 21 pd Daisy-Pod-UI-Sim;
+#X obj 783 245 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#N canvas 286 316 450 300 Preset-0 0;
+#X obj 33 25 inlet;
+#X restore 783 268 pd Preset-0;
+#X obj 1049 226 r \$0-knob1;
+#X obj 1118 226 r \$0-knob2;
+#X floatatom 1049 286 5 0 0 0 - - - 0;
+#X obj 1049 246 * 127;
+#X obj 1049 266 i;
+#X floatatom 1118 286 5 0 0 0 - - - 0;
+#X obj 1118 246 * 127;
+#X obj 1118 266 i;
+#X msg 1056 164 16;
 #X connect 0 0 9 0;
 #X connect 0 1 9 1;
 #X connect 1 0 113 0;
@@ -272,3 +402,19 @@ f;
 #X connect 117 0 11 1;
 #X connect 118 0 11 0;
 #X connect 119 0 25 0;
+#X connect 124 0 127 0;
+#X connect 125 0 136 0;
+#X connect 126 0 127 1;
+#X connect 127 0 125 0;
+#X connect 128 0 146 0;
+#X connect 129 0 133 0;
+#X connect 130 0 134 0;
+#X connect 131 0 132 0;
+#X connect 136 0 137 0;
+#X connect 138 0 141 0;
+#X connect 139 0 144 0;
+#X connect 141 0 142 0;
+#X connect 142 0 140 0;
+#X connect 144 0 145 0;
+#X connect 145 0 143 0;
+#X connect 146 0 127 2;
