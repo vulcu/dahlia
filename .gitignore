@@ -4,6 +4,9 @@
 # Python Virtual Environment
 .venv/
 
+# pd2dsy Generated Source Files
+src/main
+
 # HVCC Generated Source Files
 src/c/
 
