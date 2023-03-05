@@ -22,7 +22,7 @@ deactivate
 cd $output_directory/main
 sed -i.bak -e "s|.*LIBDAISY_DIR = .*|LIBDAISY_DIR = $libdaisy_dir|" Makefile
 rm Makefile.bak
-make
+make && make program-dfu
 
 cd $dahlia_root
 printf "\nBuild Completed! If there are no errors above, the generated source files are located in /src/main\n"
