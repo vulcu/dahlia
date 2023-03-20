@@ -4,12 +4,5 @@
 # Python Virtual Environment
 .venv/
 
-# pd2dsy Generated Source Files
-src/main
-
-# HVCC Generated Source Files
-src/c/
-
-# HVCC Intermediate Files
-src/hv/
-src/ir/
+# HVCC Generated Intermediary and Source Files
+src/
