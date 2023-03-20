@@ -4,8 +4,8 @@
 dahlia_root=$PWD
 board=pod;
 ram=speed;
-rom=size;
-pd_filename="main"
+rom=size;               # 'size' is required if program exceeds 128kB internal flash
+pd_filename="main_daisy"
 output_directory="../../src";
 search_paths="../heavylib/ -p ../heavylib/hv.filters -p ../heavylib/hv.osc";
 libdaisy_dir="../../lib/pd2dsy/libdaisy"
@@ -24,7 +24,7 @@ printf "Building Heavy source with make and attempting upload via DFU...\n"
 cd $output_directory/$pd_filename
 sed -i.bak -e "s|.*LIBDAISY_DIR = .*|LIBDAISY_DIR = $libdaisy_dir|" Makefile
 rm Makefile.bak
-make && make program-dfu
+#make && make program-dfu
 
 cd $dahlia_root
-printf "\nBuild Completed! If there are no errors above, the generated source files are located in /src/main\n"
+printf "\nBuild Completed! If there are no errors above, the generated source files are located in /src/$pd_filename\n"
