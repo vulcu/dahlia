@@ -34,7 +34,7 @@ printf "Building Heavy source with make and attempting upload via DFU...\n"
 cd $output_directory/$pd_filename
 sed -i.bak -e "s|.*LIBDAISY_DIR = .*|LIBDAISY_DIR = $libdaisy_dir|" Makefile
 rm Makefile.bak
-#make && make program-dfu
+make && make program-dfu
 
 cd $dahlia_root
 printf "\nBuild Completed! If there are no errors above, the generated source files are located in /src/$pd_filename\n"
