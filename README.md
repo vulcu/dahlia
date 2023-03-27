@@ -30,7 +30,7 @@ The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8
 1. Install python for your OS (requires Python >=3.7)
     1. On MacOS and Linux Python 3.x may already be installed, this can be checked in the terminal using `python3 --version`. If it's not installed, installation is easy but the specifics will depend on your package manager (i.e. `brew`, `apt`, `pacman`, etc.)
     1. Details for [installing python on windows](https://github.com/electro-smith/DaisyWiki/wiki/1c.-Installing-the-Toolchain-on-Windows#python-optional). Ensure the installed version is at least 3.7.
-1. Clone this repo with `git clone https://github.com/vulcu/dahlia`, and navigate to the cloned repository.
+1. Clone this repo with `git clone https://github.com/vulcu/dahlia.git`, and navigate to the cloned repository.
 1. Once navigated to the repository, run the following to create a new Python virtual environment (commands here are specific to **git-bash** in Windows and may vary slightly for other OS, i.e. `python3` instead of `py`):
 ```bash
 py -m ensurepip -U
@@ -39,7 +39,7 @@ py -m pip install virtualenv
 # if there's an existing .venv directory be sure to delete it first!
 pip -m venv ./.venv
 ```
-5. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Cross-Compiler (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
+5. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
 ```bash
 source ./.venv/Scripts/activate
 pip install -r requirements.txt
