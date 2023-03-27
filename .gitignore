@@ -6,3 +6,6 @@
 
 # HVCC Generated Intermediary and Source Files
 src/
+
+# VSCode Workspace Configuration
+.vscode/
