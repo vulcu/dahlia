@@ -26,7 +26,7 @@ rm -r src/$pd_filename
 
 printf "Building Dahlia via pd2dsy...\n" 
 cd lib/pd2dsy
-source ./pd_env/Scripts/activate
+source ./pd_env/$activation_script_directory/activate
 python pd2dsy.py ../../pd/$pd_filename.pd -b $board --ram $ram --rom $rom -d $output_directory -p $search_paths $no_build
 deactivate
 
