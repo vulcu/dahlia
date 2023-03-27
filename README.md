@@ -8,7 +8,21 @@ Dahlia is an implementation of the [Waveshape-Synth](https://github.com/vulcu/wa
 * [References](#references)
 
 ## General Info
-The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is an evolution of the original design, refactored to work with HVCC and capable of a simplified control scheme accomodating the limited Daisy Pod UI.
+The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is an evolution of this concept, refactored to work with HVCC and capable of a simplified control scheme accomodating the limited Daisy Pod UI.
+
+The synthesizer itself relies on a handful of waveshaping algorithms to produce differing kinds of overdrive and distortion from the oscillators of each synthesizer voice, and then applies an ADS-envelope low-pass filter to each voice on an individual basis. The harmonic ratios and the balance between even and odd harmonics varies by algorithm, with some sounding better than others for certain oscillator and envelope combinations. There's no hard-and-fast rules here, so just use your ears.
+
+The goal of this project is to provide a quick and simple way for a user to dial in rich, complex synth sounds without needing to know much about synthesizers. Unlike the [wavedist](https://github.com/vulcu/wavedist) plugin, all the waveshapers are active at once here, allowing for some truly wild harmonic ratios.
+
+## Features
+* Monophonic (1 Voice) and Polyphonic (8-voices)
+  * Polyphonic version easily adaptable to _N_ number of voices depending desired performance
+  * Portamento control (monophonic only)
+* 7 Oscillators, 1 ADSR, and 2 ADS envelopes per-voice
+* Oscillators selectable between Sine, Saw, and a PWM with a 5%-50% automatable duty-cycle
+* 6 different waveshaping algorithms and a Gain control
+* Unison control (oscillator de-tune)
+* Bit depth control/crush range of 1-12 bits
 
 #### Installation
 1. Follow the instructions for [installing the Daisy Toolchain for your OS](https://github.com/electro-smith/DaisyWiki/wiki/1.-Setting-Up-Your-Development-Environment#1-install-the-toolchain)
@@ -54,21 +68,6 @@ source ./build/dahlia-daisy-hvcc.sh
 source ./build/dahlia-daisy-pd2dsy.sh
 ```
 
-## General Info
-This project is a synthesizer not quite like any other. It relies on a handful of waveshaping algorithms to produce differing kinds of overdrive and distortion from the oscillators of each synthesizer voice, and then applies an ADS-envelope low-pass filter to each voice on an individual basis. The harmonic ratios and the balance between even and odd harmonics varies by algorithm, with some sounding better than others for certain oscillator and envelope combinations. There's no hard-and-fast rules here, so just use your ears.
-
-The goal of this project is to provide a quick and simple way for a user to dial in rich, complex synth sounds without needing to know much about synthesizers. Unlike the [wavedist](https://github.com/vulcu/wavedist) plugin, all the waveshapers are active at once here, allowing for some truly wild harmonic ratios.
-
-## Features
-* Monophonic (1 Voice) and Polyphonic (8-voices)
-  * Polyphonic version easily adaptable to _N_ number of voices depending desired performance
-  * Portamento control (monophonic only)
-* 7 Oscillators, 1 ADSR, and 2 ADS envelopes per-voice
-* Oscillators selectable between Sine, Saw, and a PWM with a 5%-50% automatable duty-cycle
-* 6 different waveshaping algorithms and a Gain control
-* Unison control (oscillator de-tune)
-* Bit depth control/crush range of 1-12 bits
-
 ## Daisy Pod I/O (Configured)
 | Name | Function | Type | Variants |
 | --- | --- | --- | --- |
@@ -84,15 +83,21 @@ The goal of this project is to provide a quick and simple way for a user to dial
 
 #### To Do
 * ~~Pre-development planning~~
-* ~~Refactor PD source for HVCC compatibility~~
-* ~~Refactor `main.pd` to target Daisy build~~
-* ~~Redesign UI for Daisy Pod~~
-* ~~Daisy Pod UI simulator~~
-* ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
-* Refactor `main.pd` to target DPF build
-* Build scripts targeting DPF (HVCC and pd2dsy)
-* Refactor `main.pd` to target Javascript build
-* Build scripts targeting Javascript (HVCC and pd2dsy)
+* **General**
+  * ~~Refactor PD source for HVCC compatibility~~
+  * Add LPF wrapper in voice to easily use `|vcf~ |` instead of `|lop~ |` if desired
+* **Daisy**
+  * ~~Refactor `main_daisy.pd` to target Daisy build~~
+  * ~~Redesign UI for Daisy Pod~~
+    * ~~Daisy Pod UI simulator~~
+  * ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
+* **Distrho Plugin Framework**
+  * Refactor `main_dpf.pd` to target DPF build
+  * Build script targeting DPF (HVCC)
+* **Javascript**
+  * Refactor `main_js.pd` to target Javascript build
+  * Build script targeting Javascript (HVCC)
+
 
 #### Status: This project is in active development
 
