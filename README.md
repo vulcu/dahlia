@@ -1,8 +1,6 @@
 # Dahlia - Waveshaping Synthesis for the Daisy Platform
 Dahlia is an implementation of the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) polyphonic synthesizer written in PureData and intended for use with the [Heavy Compiler Collection](https://github.com/enzienaudio/hvcc). Possible applications include the [Daisy Audio Platform](https://www.electro-smith.com/daisy) (using [pd2dsy](https://github.com/electro-smith/pd2dsy)), the [Distrho Plugin Framework](https://github.com/DISTRHO/DPF), and Javascript (using WebAssembly).
 
-The overarching goal of placing it in an embedded platform is to make an instrument which sits halfway between playable and generative synthesizer, allowing people without a background in music to create complex compositional patterns by through interaction with a limited and intuitive control set.
-
 ## Table of Contents
 * [General Info](#general-info)
 * [Features](#features)
@@ -10,20 +8,7 @@ The overarching goal of placing it in an embedded platform is to make an instrum
 * [References](#references)
 
 ## General Info
-The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is a simplified version of this, with the controls modified to accomodate the limited Daisy Pod UI.
-
-## Daisy Pod I/O (Configured)
-| Name | Function | Type | Variants |
-| --- | --- | --- | --- |
-| sw1 | _unassigned_ | Switch | sw1_press, sw1_fall, sw1_seconds |
-| sw2 | _unassigned_ | Switch | sw2_press, sw2_fall, sw2_seconds |
-| knob1 | _unassigned_ | Voltage Input | --- |
-| knob2 | _unassigned_ | Voltage Input | --- |
-| encoder | _Preset Selection (0-15)_ | Encoder | encoder_press, encoder_rise, encoder_fall, encoder_seconds |
-| led1 | _unassigned_ | RGB LED | led1_red, led1_green, led1_blue, led1_white |
-| led2 | _unassigned_ | RGB LED | led2_red, led2_green, led2_blue, led2_white |
-| gatein | _unassigned_ | Gate In | gatein_trig |
-| --- | Volume | Potentiometer | --- |
+The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is an evolution of the original design, refactored to work with HVCC and capable of a simplified control scheme accomodating the limited Daisy Pod UI.
 
 #### Installation
 1. Follow the instructions for [installing the Daisy Toolchain for your OS](https://github.com/electro-smith/DaisyWiki/wiki/1.-Setting-Up-Your-Development-Environment#1-install-the-toolchain)
@@ -33,28 +18,40 @@ The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8
 1. Clone this repo with `git clone https://github.com/vulcu/dahlia.git`, and navigate to the cloned repository.
 1. Once navigated to the repository, run the following to create a new Python virtual environment (commands here are specific to **git-bash** in Windows and may vary slightly for other OS, i.e. `python3` instead of `py`):
 ```bash
-py -m ensurepip -U
-py -m pip install virtualenv
+$ py -m ensurepip -U
+$ py -m pip install virtualenv
 
 # if there's an existing .venv directory be sure to delete it first!
-pip -m venv ./.venv
+$ py -m venv ./.venv
 ```
 5. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
 ```bash
-source ./.venv/Scripts/activate
-pip install -r requirements.txt
+$ source ./.venv/Scripts/activate
+$ pip install -r requirements.txt
+$ deactivate
 ```
 6. Run the following to update all Git submodules and build `pd2dsy`:
 ```bash
-git submodule update --init --recursive
-cd lib/pd2dsy/libdaisy
-make clean | grep "warningr:\|error:"
-make -j4 | grep "warning:r\|error:"
-cd ../../..
+$ git submodule update --init --recursive
+$ cd lib/pd2dsy/libdaisy
+$ make clean | grep "warningr:\|error:"
+$ make -j4 | grep "warning:r\|error:"
 ```
-7. If there's no errors from the above, then everything Dahlia needs is ready to go. As a test, the code can be compiled using hvcc:
+7. Install a second Python virtual environment specifically for `pd2dsy`:
 ```bash
-source ./dahlia-hvcc.sh
+$ py -m venv ./pd_env
+$ source ./pd_env/bin/activate
+$ pip install -r requirements.txt
+$ deactivate
+$ cd ../../..
+```
+8. If there's no errors from the above, then everything Dahlia needs is ready to go. As a test, the code can be compiled using hvcc:
+```bash
+# build from pd source using HVCC only
+source ./build/dahlia-daisy-hvcc.sh
+
+# build from pd source and compile for Daisy platform using Arm toolchain
+source ./build/dahlia-daisy-pd2dsy.sh
 ```
 
 ## General Info
@@ -63,8 +60,8 @@ This project is a synthesizer not quite like any other. It relies on a handful o
 The goal of this project is to provide a quick and simple way for a user to dial in rich, complex synth sounds without needing to know much about synthesizers. Unlike the [wavedist](https://github.com/vulcu/wavedist) plugin, all the waveshapers are active at once here, allowing for some truly wild harmonic ratios.
 
 ## Features
-* Monophonic (1 Voice)
-  * Includes polyphonic version (8-voices) easily reusable on more capable hardware
+* Monophonic (1 Voice) and Polyphonic (8-voices)
+  * Polyphonic version easily adaptable to _N_ number of voices depending desired performance
   * Portamento control (monophonic only)
 * 7 Oscillators, 1 ADSR, and 2 ADS envelopes per-voice
 * Oscillators selectable between Sine, Saw, and a PWM with a 5%-50% automatable duty-cycle
@@ -72,10 +69,32 @@ The goal of this project is to provide a quick and simple way for a user to dial
 * Unison control (oscillator de-tune)
 * Bit depth control/crush range of 1-12 bits
 
-#### To Do
-* Pre-development planning
+## Daisy Pod I/O (Configured)
+| Name | Function | Type | Variants |
+| --- | --- | --- | --- |
+| sw1 | _Select `knob1` function_ | Switch | sw1_press, sw1_fall, sw1_seconds |
+| sw2 | _Select `knob2` function_ | Switch | sw2_press, sw2_fall, sw2_seconds |
+| knob1 | _Parameter Control_ | Voltage Input | --- |
+| knob2 | _Parameter Control_ | Voltage Input | --- |
+| encoder | _Preset Selection (0-15)<br>Reset Preset (Press)_ | Encoder | encoder_press, encoder_rise, encoder_fall, encoder_seconds |
+| led1 | _`knob1` function selection_ | RGB LED | led1_red, led1_green, led1_blue, led1_white |
+| led2 | _`knob2` function selection_ | RGB LED | led2_red, led2_green, led2_blue, led2_white |
+| gatein | _unassigned_ | Gate In | gatein_trig |
+| --- | Volume | Potentiometer | --- |
 
-#### Status: This project is in the pre-development stage.
+#### To Do
+* ~~Pre-development planning~~
+* ~~Refactor PD source for HVCC compatibility~~
+* ~~Refactor `main.pd` to target Daisy build~~
+* ~~Redesign UI for Daisy Pod~~
+* ~~Daisy Pod UI simulator~~
+* ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
+* Refactor `main.pd` to target DPF build
+* Build scripts targeting DPF (HVCC and pd2dsy)
+* Refactor `main.pd` to target Javascript build
+* Build scripts targeting Javascript (HVCC and pd2dsy)
+
+#### Status: This project is in active development
 
 ## Algorithms
 This project uses the following algorithms for waveshaping and signal limiting:
