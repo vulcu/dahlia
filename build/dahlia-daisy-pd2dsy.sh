@@ -1,4 +1,14 @@
 #!/bin/bash
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        # Linux
+        activation_script_directory=bin
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+        # MacOS (this might be wrong!)
+        activation_script_directory=bin
+elif [[ "$OSTYPE" == "msys" ]]; then
+        # Win (GitBash/MinGW)
+        activation_script_directory=Scripts
+fi
 
 # target and environment args for pd2dsy
 dahlia_root=$PWD
