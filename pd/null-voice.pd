@@ -1,0 +1,11 @@
+#N canvas 780 397 579 305 12;
+#X obj 39 248 outlet~;
+#X obj 39 226 sig~;
+#X obj 39 182 loadbang;
+#X obj 38 42 inlet MidiPitchVelADSR;
+#X obj 215 42 inlet RealtimeUI;
+#X obj 354 42 inlet PortamentoSpeed;
+#X obj 39 204 i 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 6 0 1 0;
