@@ -71,14 +71,14 @@ source ./build/dahlia-daisy-pd2dsy.sh
 ## Daisy Pod I/O (Configured)
 | Name | Function | Type | Variants |
 | --- | --- | --- | --- |
-| sw1 | _Select `knob1` function_ | Switch | sw1_press, sw1_fall, sw1_seconds |
-| sw2 | _Select `knob2` function_ | Switch | sw2_press, sw2_fall, sw2_seconds |
-| knob1 | _Parameter Control_ | Voltage Input | --- |
-| knob2 | _Parameter Control_ | Voltage Input | --- |
-| encoder | _Preset Selection (0-15)<br>Reset Preset (Press)_ | Encoder | encoder_press, encoder_rise, encoder_fall, encoder_seconds |
-| led1 | _`knob1` function selection_ | RGB LED | led1_red, led1_green, led1_blue, led1_white |
-| led2 | _`knob2` function selection_ | RGB LED | led2_red, led2_green, led2_blue, led2_white |
-| gatein | _unassigned_ | Gate In | gatein_trig |
+| `sw1` | _Select `knob1` function_ | Switch | `sw1_press`, `sw1_fall`, `sw1_seconds` |
+| `sw2` | _Select `knob2` function_ | Switch | `sw2_press`, `sw2_fall`, `sw2_seconds` |
+| `knob1` | _Parameter Control_ | Voltage Input | --- |
+| `knob2` | _Parameter Control_ | Voltage Input | --- |
+| `encoder` | _Preset Selection (0-15)<br>Reset Preset (Press)_ | Encoder | `encoder_press`, `encoder_rise`, `encoder_fall`, `encoder_seconds` |
+| `led1` | _`knob1` function selection_ | RGB LED | `led1_red`, `led1_green`, `led1_blue`, `led1_white` |
+| `led2` | _`knob2` function selection_ | RGB LED | `led2_red`, `led2_green`, `led2_blue`, `led2_white` |
+| `gatein` | _unassigned_ | Gate In | `gatein_trig` |
 | --- | Volume | Potentiometer | --- |
 
 #### To Do
