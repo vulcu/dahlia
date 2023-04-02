@@ -3,7 +3,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         # Linux
         activation_script_directory=bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        # MacOS (this might be wrong!)
+        # MacOS
         activation_script_directory=bin
 elif [[ "$OSTYPE" == "msys" ]]; then
         # Win (GitBash/MinGW)
