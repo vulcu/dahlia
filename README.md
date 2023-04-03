@@ -40,21 +40,21 @@ $ py -m venv ./.venv
 ```
 5. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
 ```bash
-$ source ./.venv/Scripts/activate
+$ source ./.venv/Scripts/activate   # for MacOS/Linux this is `./.venv/bin/activate`
 $ pip install -r requirements.txt
 $ deactivate
 ```
-6. Run the following to update all Git submodules and build `pd2dsy`:
+6. Run the following to initialize all Git submodules, then Build `libdaisy` using the [Daisy toolchain](https://github.com/electro-smith/DaisyWiki/wiki/1.-Setting-Up-Your-Development-Environment#1-install-the-toolchain):
 ```bash
 $ git submodule update --init --recursive
 $ cd lib/pd2dsy/libdaisy
-$ make clean | grep "warningr:\|error:"
-$ make -j4 | grep "warning:r\|error:"
+$ make clean | grep "warning:\|error:"
+$ make -j4 | grep "warning:\|error:"
 ```
 7. Install a second Python virtual environment specifically for `pd2dsy`:
 ```bash
 $ py -m venv ./pd_env
-$ source ./pd_env/bin/activate
+$ source ./pd_env/scripts/activate  # for MacOS/Linux this is `./.venv/bin/activate`
 $ pip install -r requirements.txt
 $ deactivate
 $ cd ../../..
@@ -67,7 +67,7 @@ source ./build/dahlia-daisy-hvcc.sh
 # build from pd source and compile for Daisy platform using Arm toolchain
 source ./build/dahlia-daisy-pd2dsy.sh
 ```
-
+The second script will automatically try uploading to a Daisy device. The UI is expected to work, but audio will not as the Pd code uses the `|null-voice|` module in place of `|monophonic|`. The reason for this is a memory limitation; Electrosmith [has not released a working `pd2dsy` solution](https://github.com/electro-smith/pd2dsy/issues/24) for executables larger than 128 kB.
 ## Daisy Pod I/O (Configured)
 | Name | Function | Type | Variants |
 | --- | --- | --- | --- |

@@ -14,7 +14,7 @@ fi
 dahlia_root=$PWD
 board=pod;
 ram=speed;
-rom=size;               # 'size' is required if program exceeds 128kB internal flash
+rom=speed;               # 'size' is required if program exceeds 128kB internal flash
 pd_filename="main_daisy"
 output_directory="../../src";
 search_paths="../heavylib/ -p ../heavylib/hv.filters -p ../heavylib/hv.osc";
