@@ -9,3 +9,6 @@ src/
 
 # VSCode Workspace Configuration
 .vscode/
+
+# MacOS file system
+.DS_Store
