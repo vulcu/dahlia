@@ -178,9 +178,9 @@
 #X obj 435 952 pack f f f f f f f f f f f f f f f f f f f f f f f f
 ;
 #X obj 1342 821 - 0.1;
-#X obj 737 51 / 2;
-#X obj 737 71 * 0.9;
-#X obj 737 91 + 0.05;
+#X obj 737 52 / 2;
+#X obj 737 72 * 0.9;
+#X obj 737 92 + 0.05;
 #X obj 737 112 s \$0-InletPWM;
 #X obj 737 12 inlet pwmin;
 #X obj 847 11 inlet midictlin;
@@ -202,6 +202,7 @@
 #X obj 149 238 - 1;
 #X obj 847 57 pack f f;
 #X obj 847 38 t b f, f 8;
+#X obj 737 32 + 0.2;
 #X connect 0 0 87 2;
 #X connect 1 0 111 0;
 #X connect 2 0 87 4;
@@ -319,7 +320,7 @@
 #X connect 92 0 93 0;
 #X connect 93 0 94 0;
 #X connect 94 0 95 0;
-#X connect 96 0 92 0;
+#X connect 96 0 115 0;
 #X connect 97 0 114 0;
 #X connect 100 0 43 0;
 #X connect 101 0 45 0;
@@ -341,6 +342,7 @@
 #X connect 113 0 98 0;
 #X connect 114 0 113 0;
 #X connect 114 1 113 1;
+#X connect 115 0 92 0;
 #X restore 740 121 pd CoreUI;
 #X obj 716 49 inlet note;
 #X obj 730 69 inlet velocity;

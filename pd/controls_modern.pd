@@ -1,4 +1,4 @@
-#N canvas 781 396 1006 705 10;
+#N canvas 300 288 1006 705 10;
 #X obj 25 42 cnv 15 950 520 empty empty WAVESHAPE 22 70 0 20 #333243
 #9798aa 0;
 #X obj 370 286 vsl 30 256 -0.6 0.8 0 1 \$0-KWarp empty Warp 1 -9 0
@@ -65,7 +65,7 @@
 Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X obj 25 595 cnv 16 485 85 empty empty empty 20 12 0 10 #ebebeb #404040
 0;
-#N canvas 52 149 1482 723 CoreUI 0;
+#N canvas 53 150 1482 723 CoreUI 0;
 #X obj 75 58 r \$0-Attack;
 #X obj 90 82 r \$0-Decay;
 #X obj 105 148 r \$0-Sustain;
@@ -159,9 +159,9 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X obj 435 952 pack f f f f f f f f f f f f f f f f f f f f f f f f
 ;
 #X obj 1342 821 - 0.1;
-#X obj 737 51 / 2;
-#X obj 737 71 * 0.9;
-#X obj 737 91 + 0.05;
+#X obj 737 52 / 2;
+#X obj 737 72 * 0.9;
+#X obj 737 92 + 0.05;
 #X obj 737 112 s \$0-InletPWM;
 #X obj 737 12 inlet pwmin;
 #X obj 847 11 inlet midictlin;
@@ -183,6 +183,7 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X obj 149 238 - 1;
 #X obj 847 57 pack f f;
 #X obj 847 38 t b f, f 8;
+#X obj 737 32 + 0.2;
 #X connect 0 0 87 2;
 #X connect 1 0 111 0;
 #X connect 2 0 87 4;
@@ -300,7 +301,7 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X connect 92 0 93 0;
 #X connect 93 0 94 0;
 #X connect 94 0 95 0;
-#X connect 96 0 92 0;
+#X connect 96 0 115 0;
 #X connect 97 0 114 0;
 #X connect 100 0 43 0;
 #X connect 101 0 45 0;
@@ -322,6 +323,7 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X connect 113 0 98 0;
 #X connect 114 0 113 0;
 #X connect 114 1 113 1;
+#X connect 115 0 92 0;
 #X restore 38 630 pd CoreUI;
 #X f 63;
 #X obj 38 608 inlet note;
