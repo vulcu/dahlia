@@ -1,0 +1,375 @@
+#N canvas 300 287 1004 557 10;
+#X obj 25 42 cnv 15 950 472 empty empty Synth\\\ Controls 6 12 0 14
+#5cacfc #404040 0;
+#X floatatom 114 230 3 0 0 0 - \$0-ODTValue - 0;
+#X floatatom 925 152 5 0 0 0 - \$0-Attack - 0;
+#X floatatom 925 204 5 0 0 0 - \$0-DecayValue - 0;
+#X floatatom 926 305 5 0 0 0 - \$0-Release - 0;
+#X floatatom 926 356 5 0 0 0 - \$0-FMAttack - 0;
+#X floatatom 927 407 5 0 0 0 - \$0-FMDecayValue - 0;
+#X floatatom 515 230 3 0 0 0 - \$0-OUTValue - 0;
+#X floatatom 653 128 5 0 0 0 - \$0-LPDecay - 0;
+#X floatatom 652 77 5 0 0 0 - \$0-LPAttack - 0;
+#X obj 398 246 vsl 30 256 -0.6 0.8 0 1 \$0-KWarp empty Warp 4 -9 0
+10 #c4c4fc #000000 #000000 10800 1;
+#X obj 338 246 vsl 30 256 0 1.5708 0 1 \$0-Blend empty Blend 0 -9 0
+10 #c4c4fc #000000 #000000 25500 1;
+#X obj 368 246 vsl 30 256 0 2 0 1 \$0-Rectify empty Rekt 5 -9 0 10
+#c4c4fc #000000 #000000 22550 1;
+#X obj 699 168 hsl 256 30 0.3 1000 1 1 \$0-Attack empty Attack -2 -8
+0 10 #c4fcc4 #000000 #000000 5700 1;
+#X obj 700 321 hsl 256 30 1 2000 1 1 \$0-Release empty Release -2 -8
+0 10 #c4fcc4 #000000 #000000 17900 1;
+#X obj 699 220 hsl 256 30 1 5001 1 1 \$0-Decay empty Decay -2 -8 0
+10 #c4fcc4 #000000 #000000 17600 1;
+#X obj 699 270 hsl 256 30 0.0001 1 0 1 \$0-Sustain empty Sustain -2
+-8 0 10 #c4fcc4 #000000 #000000 16800 1;
+#X obj 284 80 vradio 15 1 0 5 \$0-BendRange empty empty 0 -8 0 10 #9c9c9c
+#000000 #000000 0;
+#X text 301 80 2 Semitones;
+#X text 301 96 3 Semitones;
+#X text 301 111 4 Semitones;
+#X text 302 126 Half Octave;
+#X text 303 141 Full Octave;
+#X text 282 65 Pitch Bend Range;
+#X obj 588 246 vsl 50 256 0.1 6000 1 1 \$0-FM empty FM_Freq 0 -9 0
+10 #fcfcc4 #000000 #000000 19650 1;
+#X obj 538 246 vsl 50 256 0.001 0.6 1 1 \$0-OscUpMix empty Level 0
+-9 0 10 #fce0c4 #000000 #000000 16850 1;
+#X obj 638 246 vsl 50 256 0.001 1 1 1 \$0-FMDepth empty FM_Depth 0
+-9 0 10 #fcfcc4 #000000 #000000 20700 1;
+#X obj 38 246 vsl 50 256 0.001 0.8 1 1 \$0-SubLevel empty Sub 0 -9
+0 10 #fc8000 #000000 #000000 16050 1;
+#X obj 700 372 hsl 256 30 0.3 2000 1 1 \$0-FMAttack empty FM_Attack
+-2 -8 0 10 #00fc04 #000000 #000000 8900 1;
+#X obj 701 423 hsl 256 30 1 5001 1 1 \$0-FMDecay empty FM_Decay -2
+-8 0 10 #00fc04 #000000 #000000 16700 1;
+#X obj 701 476 hsl 256 30 0.0001 1 0 1 \$0-FMSustain empty FM_Sustain
+-2 -8 0 10 #00fc04 #000000 #000000 22700 1;
+#X obj 254 177 vradio 15 1 0 3 \$0-OscSubType empty Sub 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X text 360 175 Sine;
+#X text 361 191 Sawtooth;
+#X obj 211 81 vsl 20 135 0.05 0.5 0 1 \$0-PulseWidth \$0-InletPWM Pulse_Width
+0 -9 0 10 #fc0400 #000000 #000000 11253 1;
+#X text 362 206 Pulse;
+#X floatatom 169 80 3 0 0 0 - \$0-BitDepthInt - 0;
+#X text 230 206 5%;
+#X text 232 77 50%;
+#X obj 149 80 vsl 20 135 1 12 0 1 \$0-BitDepth empty Bit_Depth 0 -9
+0 10 #fcc4c4 #000000 #000000 13400 1;
+#X obj 488 246 vsl 50 256 0 24 0 1 \$0-OscUpTune empty Tune 0 -9 0
+10 #fce0c4 #000000 #000000 18100 1;
+#X obj 88 246 vsl 50 256 -24 0 0 1 \$0-OscDownTune empty Tune 0 -9
+0 10 #e43018 #000000 #000000 17600 1;
+#X obj 138 246 vsl 50 256 0.001 0.8 1 1 \$0-OscDownMix empty Level
+0 -9 0 10 #e43018 #000000 #000000 16100 1;
+#X obj 426 93 hsl 256 30 2 2000 1 1 \$0-LPAttack empty LP_Attack -2
+-8 0 10 #fcf834 #000000 #000000 11500 1;
+#X obj 427 144 hsl 256 30 20 2000 1 1 \$0-LPDecay empty LP_Decay -2
+-8 0 10 #fcf834 #000000 #000000 6400 1;
+#X obj 427 192 hsl 256 30 0.01 1 1 1 \$0-LPSustain empty LP_Sustain
+-2 -8 0 10 #fcf834 #000000 #000000 4750 1;
+#X obj 425 57 hsl 256 15 5 10000 1 1 \$0-LPCutoff empty LP_Cutoff -2
+-8 0 10 #fcf834 #000000 #000000 6600 1;
+#X obj 188 246 vsl 50 256 0.001 1 1 1 \$0-OscSine empty Sine 0 -9 0
+10 #b40c98 #000000 #000000 25500 1;
+#X obj 288 246 vsl 50 256 0.001 1 1 1 \$0-OscPulse empty Pulse 0 -9
+0 10 #b40c98 #000000 #000000 0 1;
+#X obj 238 246 vsl 50 256 0.001 1 1 1 \$0-OscSaw empty Saw 0 -9 0 10
+#b40c98 #000000 #000000 0 1;
+#X obj 283 177 vradio 15 1 0 3 \$0-OscDownType empty Down 0 -8 0 10
+#fcfcfc #000000 #000000 0;
+#X obj 313 177 vradio 15 1 0 3 \$0-OscUpType empty Up 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj 342 177 vradio 15 1 0 3 \$0-OscFMType empty FM 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#N canvas 52 149 1482 723 CoreUI 0;
+#X obj 75 58 r \$0-Attack;
+#X obj 90 82 r \$0-Decay;
+#X obj 105 148 r \$0-Sustain;
+#X obj 853 398 r \$0-Blend;
+#X obj 896 418 r \$0-Rectify;
+#X obj 119 171 r \$0-Release;
+#X obj 724 338 r \$0-FMDepth;
+#X obj 464 217 r \$0-SubLevel;
+#X obj 390 37 / 128;
+#X obj 390 63 moses 63;
+#X obj 435 211 *;
+#X obj 435 86 moses 65;
+#X msg 435 113 0;
+#X obj 480 136 div 1;
+#X obj 480 159 / 64;
+#X obj 537 160 t b f;
+#X msg 537 112 2;
+#X msg 570 112 3;
+#X msg 604 112 4;
+#X msg 639 112 6;
+#X msg 673 112 12;
+#X obj 537 66 loadbang;
+#X obj 594 42 r \$0-BendRange;
+#X obj 594 66 sel 0 1 2 3 4;
+#X obj 480 113 - 63.9;
+#X obj 390 88 - 64;
+#X obj 134 193 r \$0-FMAttack;
+#X obj 149 216 r \$0-FMDecay;
+#X obj 164 280 r \$0-FMSustain;
+#X obj 767 358 r \$0-PulseWidth;
+#X obj 390 113 / 64;
+#X obj 163 260 s \$0-FMDecayValue;
+#X obj 104 127 s \$0-DecayValue;
+#X obj 508 238 r \$0-OscDownMix;
+#X obj 551 258 r \$0-OscDownTune;
+#X obj 595 278 r \$0-OscUpMix;
+#X obj 638 298 r \$0-OscUpTune;
+#X obj 681 318 r \$0-FM;
+#X obj 223 366 r \$0-LPSustain;
+#X obj 208 345 r \$0-LPDecay;
+#X obj 193 324 r \$0-LPAttack;
+#X obj 178 302 r \$0-LPCutoff;
+#X obj 111 453 r \$0-OscDownTune;
+#X obj 111 497 s \$0-ODTValue;
+#X obj 238 453 r \$0-OscUpTune;
+#X obj 238 497 s \$0-OUTValue;
+#X obj 939 438 r \$0-OscSine;
+#X obj 982 458 r \$0-OscSaw;
+#X obj 1025 478 r \$0-OscPulse;
+#X obj 1068 498 r \$0-OscSubType;
+#X obj 1111 519 r \$0-OscDownType;
+#X obj 1154 539 r \$0-OscUpType;
+#X obj 1197 559 r \$0-OscFMType;
+#X text 111 517 ODTValue and OUTValue are used in UI;
+#X obj 435 980 outlet;
+#X obj 46 980 outlet;
+#X obj 46 11 inlet notein;
+#X obj 60 35 inlet velocityin;
+#X obj 390 11 inlet bendin;
+#X obj 1246 637 s \$0-BitDepthInt;
+#X obj 1246 580 r \$0-BitDepth;
+#X obj 464 238 t b f;
+#X obj 508 258 t b f;
+#X obj 551 278 t b f;
+#X obj 595 298 t b f;
+#X obj 638 318 t b f;
+#X obj 681 338 t b f;
+#X obj 724 358 t b f;
+#X obj 767 378 t b f;
+#X obj 810 398 t b f;
+#X obj 853 418 t b f;
+#X obj 896 438 t b f;
+#X obj 939 458 t b f;
+#X obj 982 478 t b f;
+#X obj 1025 498 t b f;
+#X obj 1068 519 t b f;
+#X obj 1111 539 t b f;
+#X obj 1154 559 t b f;
+#X obj 1197 580 t b f;
+#X obj 1209 637 t b f;
+#X obj 1246 659 r \$0-Gain;
+#X obj 1203 736 t b f;
+#X obj 1246 736 s \$0-GainDisplay;
+#X obj 1246 779 t b f;
+#X obj 1294 800 t b f;
+#X obj 1294 779 r \$0-skClip;
+#X obj 1246 758 r \$0-scThresh;
+#X obj 46 393 pack f f f f f f f f f f f f f;
+#X obj 1342 842 t b f;
+#X obj 1342 800 r \$0-Unison;
+#X obj 435 952 pack f f f f f f f f f f f f f f f f f f f f f f f f
+;
+#X obj 1342 821 - 0.1;
+#X obj 737 51 / 2;
+#X obj 737 71 * 0.9;
+#X obj 737 91 + 0.05;
+#X obj 737 112 s \$0-InletPWM;
+#X obj 737 12 inlet pwmin;
+#X obj 847 11 inlet midictlin;
+#X obj 847 77 route 32 51 7 52 10 53 74 54 71 55 73 56 72 57 91 58
+92;
+#X text 847 97 configured for Nocturn25 controller;
+#X obj 111 475 i;
+#X obj 238 475 i;
+#X obj 810 378 r \$0-KWarp;
+#X obj 1246 618 i;
+#X obj 1246 599 + 0.5;
+#X obj 1203 717 pow, f 6;
+#X obj 1203 679 t b f, f 6;
+#X msg 1203 696 10;
+#X obj 1246 679 * 200;
+#X obj 1246 698 i;
+#X obj 1246 717 / 10;
+#X obj 90 104 - 1;
+#X obj 149 238 - 1;
+#X obj 847 57 pack f f;
+#X obj 847 38 t b f, f 8;
+#X connect 0 0 87 2;
+#X connect 1 0 111 0;
+#X connect 2 0 87 4;
+#X connect 3 0 70 0;
+#X connect 4 0 71 0;
+#X connect 5 0 87 5;
+#X connect 6 0 67 0;
+#X connect 7 0 61 0;
+#X connect 8 0 9 0;
+#X connect 9 0 25 0;
+#X connect 9 1 11 0;
+#X connect 10 0 90 0;
+#X connect 11 0 12 0;
+#X connect 11 1 24 0;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X connect 15 0 10 0;
+#X connect 15 1 10 1;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 18 0 15 0;
+#X connect 19 0 15 0;
+#X connect 20 0 15 0;
+#X connect 21 0 16 0;
+#X connect 22 0 23 0;
+#X connect 23 0 16 0;
+#X connect 23 1 17 0;
+#X connect 23 2 18 0;
+#X connect 23 3 19 0;
+#X connect 23 4 20 0;
+#X connect 24 0 13 0;
+#X connect 25 0 30 0;
+#X connect 26 0 87 6;
+#X connect 27 0 112 0;
+#X connect 28 0 87 8;
+#X connect 29 0 68 0;
+#X connect 30 0 10 0;
+#X connect 33 0 62 0;
+#X connect 34 0 63 0;
+#X connect 35 0 64 0;
+#X connect 36 0 65 0;
+#X connect 37 0 66 0;
+#X connect 38 0 87 12;
+#X connect 39 0 87 11;
+#X connect 40 0 87 10;
+#X connect 41 0 87 9;
+#X connect 42 0 100 0;
+#X connect 44 0 101 0;
+#X connect 46 0 72 0;
+#X connect 47 0 73 0;
+#X connect 48 0 74 0;
+#X connect 49 0 75 0;
+#X connect 50 0 76 0;
+#X connect 51 0 77 0;
+#X connect 52 0 78 0;
+#X connect 56 0 87 0;
+#X connect 57 0 87 1;
+#X connect 58 0 8 0;
+#X connect 60 0 104 0;
+#X connect 61 0 90 0;
+#X connect 61 1 90 1;
+#X connect 62 0 90 0;
+#X connect 62 1 90 2;
+#X connect 63 0 90 0;
+#X connect 63 1 90 3;
+#X connect 64 0 90 0;
+#X connect 64 1 90 4;
+#X connect 65 0 90 0;
+#X connect 65 1 90 5;
+#X connect 66 0 90 0;
+#X connect 66 1 90 6;
+#X connect 67 0 90 0;
+#X connect 67 1 90 7;
+#X connect 68 0 90 0;
+#X connect 68 1 90 8;
+#X connect 69 0 90 0;
+#X connect 69 1 90 9;
+#X connect 70 0 90 0;
+#X connect 70 1 90 10;
+#X connect 71 0 90 0;
+#X connect 71 1 90 11;
+#X connect 72 0 90 0;
+#X connect 72 1 90 12;
+#X connect 73 0 90 0;
+#X connect 73 1 90 13;
+#X connect 74 0 90 0;
+#X connect 74 1 90 14;
+#X connect 75 0 90 0;
+#X connect 75 1 90 15;
+#X connect 76 0 90 0;
+#X connect 76 1 90 16;
+#X connect 77 0 90 0;
+#X connect 77 1 90 17;
+#X connect 78 0 90 0;
+#X connect 78 1 90 18;
+#X connect 79 0 90 0;
+#X connect 79 1 90 19;
+#X connect 80 0 106 0;
+#X connect 80 0 108 0;
+#X connect 81 0 90 0;
+#X connect 81 1 90 20;
+#X connect 83 0 90 0;
+#X connect 83 1 90 21;
+#X connect 84 0 90 0;
+#X connect 84 1 90 22;
+#X connect 85 0 84 0;
+#X connect 86 0 83 0;
+#X connect 87 0 55 0;
+#X connect 88 0 90 0;
+#X connect 88 1 90 23;
+#X connect 89 0 91 0;
+#X connect 90 0 54 0;
+#X connect 91 0 88 0;
+#X connect 92 0 93 0;
+#X connect 93 0 94 0;
+#X connect 94 0 95 0;
+#X connect 96 0 92 0;
+#X connect 97 0 114 0;
+#X connect 100 0 43 0;
+#X connect 101 0 45 0;
+#X connect 102 0 69 0;
+#X connect 103 0 59 0;
+#X connect 103 0 79 0;
+#X connect 104 0 103 0;
+#X connect 105 0 81 0;
+#X connect 106 0 107 0;
+#X connect 106 1 105 1;
+#X connect 107 0 105 0;
+#X connect 108 0 109 0;
+#X connect 109 0 110 0;
+#X connect 110 0 82 0;
+#X connect 111 0 32 0;
+#X connect 111 0 87 3;
+#X connect 112 0 31 0;
+#X connect 112 0 87 7;
+#X connect 113 0 98 0;
+#X connect 114 0 113 0;
+#X connect 114 1 113 1;
+#X restore 740 121 pd CoreUI;
+#X obj 716 49 inlet note;
+#X obj 730 69 inlet velocity;
+#X floatatom 114 80 4 0 0 0 - \$0-GainDisplay - 0;
+#X obj 94 80 vsl 20 135 -0.3 0.3 0 1 \$0-Gain empty Gain 0 -9 0 10
+#e0c4fc #000000 #000000 13400 1;
+#X obj 428 246 vsl 30 256 0.25 1 0 1 \$0-scThresh empty Cube 3 -9 0
+10 #c4c4fc #000000 #000000 25500 1;
+#X obj 458 246 vsl 30 256 0 1 0 1 \$0-skClip empty Soft 3 -9 0 10 #c4c4fc
+#000000 #000000 19850 1;
+#X obj 39 79 vsl 35 135 0.1 2.7 0 1 \$0-Unison empty Unison 0 -9 0
+10 #000000 #fc0000 #000000 0 1;
+#X obj 817 89 inlet PWM;
+#X obj 751 89 inlet bend;
+#X obj 877 89 inlet midictl;
+#X text 27 25 NOTE;
+#X text 240 25 VELOCITY;
+#X text 25 513 MIDI DATA;
+#X text 827 513 REALTIME CONTROLLER DATA;
+#X obj 740 144 outlet;
+#X obj 791 144 outlet;
+#X text 923 25 MIDI CTL;
+#X text 472 25 PITCHBEND;
+#X text 708 25 PWM WIDTH;
+#X connect 53 0 68 0;
+#X connect 53 1 69 0;
+#X connect 54 0 53 0;
+#X connect 55 0 53 1;
+#X connect 61 0 53 3;
+#X connect 62 0 53 2;
+#X connect 63 0 53 4;
+#X coords 0 0 1 1 950 505 2 25 25;
