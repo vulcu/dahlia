@@ -1,7 +1,7 @@
-![](docs/screenshot-02.png)
+![User Interface](docs/images/dahlia-controls-main.png)
 
-# Dahlia - Waveshaping Synthesis for the Daisy Platform
-Dahlia is an implementation of the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) polyphonic synthesizer written in PureData and intended for use with the [Heavy Compiler Collection](https://github.com/enzienaudio/hvcc). Possible applications include the [Daisy Audio Platform](https://www.electro-smith.com/daisy) (using [pd2dsy](https://github.com/electro-smith/pd2dsy)), the [Distrho Plugin Framework](https://github.com/DISTRHO/DPF), and Javascript (using WebAssembly).
+# Dahlia - Waveshaping Synthesis for HVCC
+**Dahlia** is an implementation of the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) polyphonic synthesizer written in PureData and intended for use with the [Heavy Compiler Collection](https://github.com/Wasted-Audio/hvcc). Possible applications include the [Daisy Audio Platform](https://www.electro-smith.com/daisy) (using [pd2dsy](https://github.com/electro-smith/pd2dsy)), the [Distrho Plugin Framework](https://github.com/DISTRHO/DPF), and Javascript (using WebAssembly).
 
 ## Table of Contents
 * [General Info](#general-info)
@@ -10,7 +10,7 @@ Dahlia is an implementation of the [Waveshape-Synth](https://github.com/vulcu/wa
 * [References](#references)
 
 ## General Info
-The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. Dahlia is an evolution of this concept, refactored to work with HVCC and capable of a simplified control scheme accomodating the limited Daisy Pod UI.
+The original [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) is an 8-voice polyphonic audio synthesizer with per-voice oscillator waveshaping created as a collection of Pure Data subpatches. It was inspired by [wavedist](https://github.com/vulcu/wavedist) and uses the same waveshaping algorithms. **Dahlia** is an evolution of this concept, refactored to work with HVCC and capable of a simplified control scheme accomodating the limited Daisy Pod UI. **Dahlia** can also be used directly from within Pure Data, see `main_puredata.pd` for an example.
 
 The synthesizer itself relies on a handful of waveshaping algorithms to produce differing kinds of overdrive and distortion from the oscillators of each synthesizer voice, and then applies an ADS-envelope low-pass filter to each voice on an individual basis. The harmonic ratios and the balance between even and odd harmonics varies by algorithm, with some sounding better than others for certain oscillator and envelope combinations. There's no hard-and-fast rules here, so just use your ears.
 
@@ -56,20 +56,20 @@ $ make -j4 | grep "warning:\|error:"
 7. Install a second Python virtual environment specifically for `pd2dsy`:
 ```bash
 $ py -m venv ./pd_env
-$ source ./pd_env/scripts/activate  # for MacOS/Linux this is `./.venv/bin/activate`
+$ source ./pd_env/scripts/activate  # for MacOS/Linux this is `./pd_env/bin/activate`
 $ pip install -r requirements.txt
 $ deactivate
 $ cd ../../..
 ```
-8. If there's no errors from the above, then everything Dahlia needs is ready to go. As a test, the code can be compiled using hvcc:
+8. If there's no errors from the above, then everything **Dahlia** needs is ready to go. As a test, the code can be compiled using hvcc:
 ```bash
 # build from pd source using HVCC only
-source ./build/dahlia-daisy-hvcc.sh
+source ./dahlia-daisy-hvcc.sh
 
 # build from pd source and compile for Daisy platform using Arm toolchain
-source ./build/dahlia-daisy-pd2dsy.sh
+source ./dahlia-daisy-pd2dsy.sh
 ```
-The second script will automatically try uploading to a Daisy device. The UI is expected to work, but audio will not as the Pd code uses the `|null-voice|` module in place of `|monophonic|`. The reason for this is a memory limitation; Electrosmith [has not released a working `pd2dsy` solution](https://github.com/electro-smith/pd2dsy/issues/24) for executables larger than 128 kB.
+The second script will automatically try uploading to a Daisy device. The UI is expected to work, but audio will not as the Pd code uses the `|null_voice|` module in place of `|monophonic|`. The reason for this is a memory limitation; Electrosmith [has not released a working `pd2dsy` solution](https://github.com/electro-smith/pd2dsy/issues/24) for executables larger than 128 kB.
 ## Daisy Pod I/O (Configured)
 | Name | Function | Type | Variants |
 | --- | --- | --- | --- |
