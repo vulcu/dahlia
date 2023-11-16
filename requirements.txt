@@ -1,3 +1,4 @@
 wheel
+setuptools
 hvcc==0.6.3
 es-hvcc-sensors==0.2.1
