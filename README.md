@@ -58,6 +58,7 @@ $ make -j4 | grep "warning:\|error:"
 $ py -m venv ./pd_env
 $ source ./pd_env/scripts/activate  # for MacOS/Linux this is `./pd_env/bin/activate`
 $ pip install -r requirements.txt
+$ pip install setuptools
 $ deactivate
 $ cd ../../..
 ```
