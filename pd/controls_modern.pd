@@ -336,8 +336,8 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X obj 418 191 cnv 18 25 20 empty empty empty 20 10 0 12 #cecfd9 #aaabb9
 0;
 #X floatatom 418 190 4 0 0 0 - \$0-BitDepthInt - 0;
-#X obj 277 204 hsl 165 25 1 12 0 0 \$0-BitDepth empty Bit\\\ Depth
--2 -8 0 10 #1ee171 #000000 #cecfd9 0 1;
+#X obj 277 204 hsl 165 25 1 12 0 1 \$0-BitDepth empty Bit\ Depth -2
+-8 0 10 #1ee171 #000000 #cecfd9 10300 1;
 #X obj 397 102 cnv 16 1 1 empty empty Sine 5 8 0 10 #414055 #cecfd9
 0;
 #X obj 397 117 cnv 16 1 1 empty empty Sawtooth 5 8 0 10 #414055 #cecfd9
@@ -415,8 +415,8 @@ Pulse\\\ Width -2 -8 0 10 #3ae21d #000000 #cecfd9 0 1;
 #X text 708 25 PWM WIDTH;
 #X text 27 563 MIDI DATA;
 #X text 822 563 REALTIME CONTROLLER DATA;
-#X obj 180 90 vsl 26 136 -0.3 0.3 0 0 \$0-Gain empty Gain 0 -9 0 10
-#17e8b9 #000000 #cecfd9 0 1;
+#X obj 180 90 vsl 26 136 -0.3 0.3 0 1 \$0-Gain empty Gain 0 -9 0 10
+#17e8b9 #000000 #cecfd9 6700 1;
 #X obj 224 90 vsl 25 136 0.1 2.7 0 0 \$0-Unison empty Unison 0 -9 0
 10 #abec13 #000000 #cecfd9 0 1;
 #X connect 33 0 39 0;
