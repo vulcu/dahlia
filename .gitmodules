@@ -6,3 +6,9 @@
 	path = lib/pd2dsy
 	url = https://github.com/electro-smith/pd2dsy.git
 	ignore = dirty
+[submodule "lib/DPF"]
+	path = lib/DPF
+	url = https://github.com/DISTRHO/DPF.git
+[submodule "lib/DPF-Widgets"]
+	path = lib/DPF-Widgets
+	url = https://github.com/DISTRHO/DPF.git
