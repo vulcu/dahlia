@@ -1,0 +1,26 @@
+{
+    "dpf": {
+        "dpf_path": "lib/",
+        "project": true,
+        "enable_ui": true,
+        "description": "Dahlia Synthesizer",
+        "maker": "vulcu",
+        "license": "GPL-V3",
+        "midi_input": 1,
+        "midi_output": 0,
+        "plugin_formats": [
+            "lv2_sep",
+            "vst2",
+            "vst3",
+            "clap",
+            "jack"
+        ],
+        "lv2_info": "lv2:InstrumentPlugin",
+        "vst3_info": "Instrument|Synth|Stereo",
+        "clap_info": [
+            "instrument",
+            "synthesizer",
+            "stereo"
+        ]
+    }
+}

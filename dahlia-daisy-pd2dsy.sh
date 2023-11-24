@@ -1,20 +1,20 @@
 #!/bin/bash
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        # Linux
-        activation_script_directory=bin
+    # Linux
+    activation_script_directory=bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        # MacOS
-        activation_script_directory=bin
+    # MacOS
+    activation_script_directory=bin
 elif [[ "$OSTYPE" == "msys" ]]; then
-        # Win (GitBash/MinGW)
-        activation_script_directory=Scripts
+    # Win (GitBash/MinGW)
+    activation_script_directory=Scripts
 fi
 
 # target and environment args for pd2dsy
 dahlia_root=$PWD
 board=pod;
 ram=speed;
-rom=speed;               # 'size' is required if program exceeds 128kB internal flash
+rom=speed;              # 'size' is required if program exceeds 128kB internal flash
 pd_filename="main_daisy"
 output_directory="../../src";
 search_paths="../heavylib/ -p ../heavylib/hv.filters -p ../heavylib/hv.osc";
