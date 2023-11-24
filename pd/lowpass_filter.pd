@@ -1,11 +1,11 @@
-#N canvas 780 396 296 288 12;
+#N canvas 339 346 296 288 12;
 #X obj 82 127 samplerate~;
 #X obj 82 81 loadbang;
 #X obj 89 104 r pd-dsp-started;
 #X obj 50 173 lop~, f 5;
 #X text 92 185 if SR=44.1 kHz;
-#X obj 51 43 inlet~ Audio;
-#X obj 49 217 outlet~;
+#X obj 50 43 inlet~ Audio;
+#X obj 50 217 outlet~;
 #X text 92 171 Approx 16 kHz;
 #X obj 82 150 * 0.362812;
 #X connect 0 0 8 0;
