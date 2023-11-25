@@ -1,0 +1,11 @@
+{
+    "daisy": {
+        "board": "pod",
+		"usb_midi": false,
+		"debug_printing": false,
+		"samplerate": 48000,
+        "blocksize": 64,
+		"linker_script": "",
+        "bootloader": ""
+    }
+}

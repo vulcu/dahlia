@@ -1,6 +1,6 @@
 {
     "dpf": {
-        "dpf_path": "lib/",
+        "dpf_path": "../lib/",
         "project": true,
         "enable_ui": true,
         "description": "Dahlia Synthesizer",

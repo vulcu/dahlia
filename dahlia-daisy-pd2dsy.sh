@@ -1,4 +1,5 @@
 #!/bin/bash
+#Python virtualenv activation script location varies with OS type
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
     activation_script_directory=bin
