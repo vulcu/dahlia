@@ -11,4 +11,4 @@
 	url = https://github.com/DISTRHO/DPF.git
 [submodule "lib/DPF-Widgets"]
 	path = lib/DPF-Widgets
-	url = https://github.com/DISTRHO/DPF.git
+	url = https://github.com/DISTRHO/DPF-Widgets.git
