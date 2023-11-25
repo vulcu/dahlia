@@ -21,7 +21,6 @@ exe() {
 search_paths="lib/heavylib lib/heavylib/hv.filters lib/heavylib/hv.osc"
 out_dir="./src/"
 name="dahlia"
-meta=""
 copyright="Copyright Winry Litwa-Vulcu 2021-2023 and Licensed under GPL-3.0"
 
 # common error messages
@@ -36,29 +35,30 @@ elif [[ $# -gt 1 ]]; then
     printf "$errmsg_usage"
     return 1 2> /dev/null || exit 1
 else
-    if [[ $1 == "daisy" ]] || [[ $1 == "dpf" ]] || [[ $1 == "webaudio" ]]; then
+    if [[ $1 == "daisy" ]]; then
         pd_filename=main_$1
-        if [[ $1 == "daisy" ]]; then
-            meta="-m dahlia-daisy.json"
-            gen="daisy"
-            if [ -d src/daisy ]; then
-                rm -r src/daisy
-            fi
-        elif [[ $1 == "dpf" ]]; then
-            meta="-m dahlia-dpf.json"
-            gen="dpf"
-            if [ -d src/plugin ]; then
-                rm -r src/plugin
-            fi
-            if [ -f src/Makefile ]; then
-                rm -r src/Makefile
-            fi
-            if [ -f src/README.md ]; then
-                rm -r src/README.md
-            fi
-        elif [[ $1 == "webaudio" ]]; then
-            gen="js"
+        meta="-m dahlia-daisy.json"
+        gen="daisy"
+        if [ -d src/daisy ]; then
+            rm -r src/daisy
         fi
+    elif [[ $1 == "dpf" ]]; then
+        pd_filename=main_$1
+        meta="-m dahlia-dpf.json"
+        gen="dpf"
+        if [ -d src/plugin ]; then
+            rm -r src/plugin
+        fi
+        if [ -f src/Makefile ]; then
+            rm -r src/Makefile
+        fi
+        if [ -f src/README.md ]; then
+            rm -r src/README.md
+        fi
+    elif [[ $1 == "webaudio" ]]; then
+        pd_filename=main_$1
+        meta=""
+        gen="js"
     else
         printf "\n\e[31mError: Unrecognized generator target!\e[0m\n"
         printf "$errmsg_usage"
