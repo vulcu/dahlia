@@ -8,7 +8,8 @@
 
 * [General Info](#general-info)
 * [Features](#features)
-* [Installation](#installation)
+* [Installation (Daisy)](#installation-daisy)
+* [Installation (DPF)](#installation-dpf)
 * [Algorithms](#algorithms)
 * [References](#references)
 
@@ -31,7 +32,7 @@ The goal of this project is to provide a quick and simple way for a user to dial
 * Unison control (oscillator de-tune)
 * Bit depth control/crush range of 1-12 bits
 
-## Installation
+## Installation (Daisy)
 
 1. Follow the instructions for [installing the Daisy Toolchain for your OS](https://github.com/electro-smith/DaisyWiki/wiki/1.-Setting-Up-Your-Development-Environment#1-install-the-toolchain)
 1. Install python for your OS (requires Python >=3.7)
@@ -80,15 +81,15 @@ $ cd ../../..
 
 ```bash
 # build for a target (e.g. Daisy) from pd source using HVCC only
-source ./dahlia-hvcc.sh daisy
+$ source ./dahlia-hvcc.sh daisy
 
 # build from pd source and compile for Daisy platform using Arm toolchain
-source ./dahlia-daisy-pd2dsy.sh
+$ source ./dahlia-daisy-pd2dsy.sh
 ```
 
 The second script will automatically try uploading to a Daisy device. The UI is expected to work, but audio will not as the Pd code uses the `|null_voice|` module in place of `|monophonic|`. The reason for this is a known memory limitation; Electrosmith [has not released a working `pd2dsy` solution](https://github.com/electro-smith/pd2dsy/issues/24) for executables larger than 128 kB.
 
-## Daisy Pod I/O (Configured)
+### Daisy Pod I/O (Configured)
 
 | Name | Function | Type | Variants |
 | --- | --- | --- | --- |
@@ -101,6 +102,44 @@ The second script will automatically try uploading to a Daisy device. The UI is 
 | `led2` | _`knob2` function selection_ | RGB LED | `led2_red`, `led2_green`, `led2_blue`, `led2_white` |
 | `gatein` | _unassigned_ | Gate In | `gatein_trig` |
 | --- | Volume | Potentiometer | --- |
+
+## Installation (DPF)
+
+1. On Windows, follow the instructions for [installing MSYS2 on Windows](https://www.msys2.org/). If using VSCode, [this article on getting started with C++ and MinGW](https://code.visualstudio.com/docs/cpp/config-mingw) is also a good starting point. On Linux (Ubuntu), you will need to make sure you have the `build-essentials` and `pkg-config` packages installed. Other Linux distributions may require different packages, but need to be configured to enable building C++ for x86 platforms.
+    1. Documentation for DPF is available here: [https://distrho.github.io/DPF/](https://distrho.github.io/DPF/). See the [DPF Github Page](https://github.com/DISTRHO/DPF) for more information.
+1. Clone this repo with `git clone https://github.com/vulcu/dahlia.git`, and navigate to the cloned repository.
+1. Once navigated to the repository, run the following to create a new Python virtual environment (commands here are specific to **git-bash** in Windows and may vary slightly for other OS, i.e. `python3` instead of `py`):
+
+```bash
+$ py -m ensurepip -U
+$ py -m pip install virtualenv
+
+# if there's an existing .venv directory be sure to delete it first!
+$ py -m venv ./.venv
+```
+
+4. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
+
+```bash
+$ source ./.venv/Scripts/activate   # for MacOS/Linux this is `./.venv/bin/activate`
+$ pip install -r requirements.txt
+$ deactivate
+```
+
+5. Run the following to initialize all Git submodules:
+
+```bash
+$ git submodule update --init --recursive
+```
+
+6. If there's no errors from any of the above steps, then everything **Dahlia** needs is ready to go. As a test, the code can be compiled using hvcc:
+
+```bash
+# build for a target (e.g. Daisy) from pd source using HVCC only
+$ source ./dahlia-hvcc.sh daisy
+```
+
+Followed by compilation of the hvcc output using `make`. On Windows, this may require changing to a different shell environment, e.g. UCRT64/MSYS2, depending on how the C++ build tools from **1.** above are installed/configured.
 
 ## To Do
 
