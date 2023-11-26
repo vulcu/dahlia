@@ -39,22 +39,10 @@ else
         pd_filename=main_$1
         meta="-m dahlia-daisy.json"
         gen="daisy"
-        if [ -d src/daisy ]; then
-            rm -r src/daisy
-        fi
     elif [[ $1 == "dpf" ]]; then
         pd_filename=main_$1
         meta="-m dahlia-dpf.json"
         gen="dpf"
-        if [ -d src/plugin ]; then
-            rm -r src/plugin
-        fi
-        if [ -f src/Makefile ]; then
-            rm -r src/Makefile
-        fi
-        if [ -f src/README.md ]; then
-            rm -r src/README.md
-        fi
     elif [[ $1 == "webaudio" ]]; then
         pd_filename=main_$1
         meta=""
@@ -68,10 +56,22 @@ fi
 
 printf "\nCleaning up previous builds...\n"
 rm -r src/ir && rm -r src/hv && rm -r src/c
+if [ -d src/daisy ]; then
+    rm -r src/daisy
+fi
+if [ -d src/plugin ]; then
+    rm -r src/plugin
+fi
+if [ -f src/Makefile ]; then
+    rm src/Makefile
+fi
+if [ -f src/README.md ]; then
+    rm src/README.md
+fi
 
 printf "Building Dahlia via hvcc...\n"
 source  ./.venv/$activation_script_directory/activate
-exe hvcc ./pd/$pd_filename.pd -o $out_dir -p $search_paths -n $name $meta -g $gen --copyright "$copyright"
+exe hvcc ./pd/$pd_filename.pd -o $out_dir -p $search_paths -n $name $meta -g $gen -v --copyright "$copyright"
 deactivate
 
 printf "Build Completed! If there are no errors above, the generated source files are located in $out_dir\n\n"
