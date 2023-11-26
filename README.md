@@ -118,7 +118,7 @@ $ py -m pip install virtualenv
 $ py -m venv ./.venv
 ```
 
-4. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc) along with [the pd2dsy dependencies](https://github.com/electro-smith/pd2dsy).
+4. Once the python virtual environment is installed to `dahlia/.venv`, activate it and install this fork of the [Heavy Compiler Collection (hvcc)](https://github.com/Wasted-Audio/hvcc).
 
 ```bash
 $ source ./.venv/Scripts/activate   # for MacOS/Linux this is `./.venv/bin/activate`
@@ -152,8 +152,8 @@ Followed by compilation of the hvcc output using `make`. On Windows, this may re
     * ~~Daisy Pod UI simulator~~
   * ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
 * **Distrho Plugin Framework**
-  * Refactor `main_dpf.pd` to target DPF build
-  * Build script targeting DPF (HVCC)
+  * ~~Refactor `main_dpf.pd` to target DPF build~~
+  * ~~Build script targeting DPF (HVCC)~~
 * **Javascript**
   * Refactor `main_js.pd` to target Javascript/WebAudio build
   * Build script targeting Javascript/WebAudio (HVCC)
