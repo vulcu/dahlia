@@ -1,16 +1,17 @@
-![User Interface](docs/img/controls-main.png)
+![User Interface](docs/img/controls-modern.png)
 
 # Dahlia - Waveshaping Synthesis for HVCC
 
-**Dahlia** is an implementation of the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) polyphonic synthesizer written in PureData and intended for use with the [Heavy Compiler Collection](https://github.com/Wasted-Audio/hvcc). Possible applications include the [Daisy Audio Platform](https://www.electro-smith.com/daisy) (using [pd2dsy](https://github.com/electro-smith/pd2dsy)), the [Distrho Plugin Framework](https://github.com/DISTRHO/DPF), and Javascript (using WebAssembly).
+**Dahlia** is an implementation of the [Waveshape-Synth](https://github.com/vulcu/waveshape-synth) polyphonic synthesizer written in PureData and intended for use with the [Heavy Compiler Collection](https://github.com/Wasted-Audio/hvcc). Possible applications include the [Daisy Audio Platform](https://www.electro-smith.com/daisy) (using [pd2dsy](https://github.com/electro-smith/pd2dsy)), the [Distrho Plugin Framework](https://github.com/DISTRHO/DPF), and Javascript (using [WebAudio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)).
 
 ## Table of Contents
 
 * [General Info](#general-info)
 * [Features](#features)
-* [User Interface](/docs/dahlia.ui.md#dahlia-user-interface-configurations)
-* [Installation (Daisy)](/docs/dahlia.setup.daisy.md#installation--setup-daisy)
-* [Installation (DPF)](/docs/dahlia.setup.dpf.md#installation--setup-distrho-plugin-framework)
+* [User Interface](/docs/01.ui-configurations.md#dahlia-user-interface-configurations)
+* [Installation (Daisy)](/docs/02.1.setup.daisy.md#installation--setup-daisy)
+* [Installation (DPF)](/docs/02.2.setup.dpf.md#installation--setup-distrho-plugin-framework)
+* [Installation (Javascript)](/docs/02.3.setup.javascript.md#installation--setup-distrho-plugin-framework)
 * [Algorithms](/docs/dahlia.algorithms.md#algorithms)
 * [References](/docs/dahlia.references.md#references)
 
