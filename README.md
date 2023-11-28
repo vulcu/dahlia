@@ -12,8 +12,8 @@
 * [Installation (Daisy)](/docs/02.1.setup.daisy.md#installation--setup-daisy)
 * [Installation (DPF)](/docs/02.2.setup.dpf.md#installation--setup-distrho-plugin-framework)
 * [Installation (Javascript)](/docs/02.3.setup.javascript.md#installation--setup-distrho-plugin-framework)
-* [Algorithms](/docs/dahlia.algorithms.md#algorithms)
-* [References](/docs/dahlia.references.md#references)
+* [Algorithms](/docs/03.algorithms.md)
+* [References](/docs/04.references.md)
 
 ## General Info
 
