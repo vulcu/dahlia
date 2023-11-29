@@ -1,4 +1,4 @@
-#N canvas 138 83 1410 998 10;
+#N canvas 181 76 1410 998 10;
 #X obj 247 28 ctlin, f 12;
 #X obj 30 28 notein, f 34;
 #X obj 87 886 midi_to_ms;
@@ -83,8 +83,7 @@
 #X obj 30 445 pack f f f f f f f f f f f f f;
 #X obj 1310 853 t b f;
 #X obj 1310 811 r \$0-Unison;
-#X obj 403 927 pack f f f f f f f f f f f f f f f f f f f f f f f f
-;
+#X obj 403 927 pack f f f f f f f f f f f f f f f f f f f f f f f f;
 #X obj 1310 832 - 0.1;
 #X obj 778 389 r \$0-KWarp;
 #X obj 1214 629 i;
@@ -110,8 +109,7 @@
 #X obj 58 845 r \$0-RealtimeControl;
 #X obj 30 824 r \$0-MidiData;
 #X obj 448 123 i;
-#X obj 30 503 cnv 15 310 310 empty empty Encoder 20 12 0 14 #dfdfdf
-#202020 0;
+#X obj 30 503 cnv 15 310 310 empty empty Encoder 20 12 0 14 #dfdfdf #202020 0;
 #X obj 50 561 encoder_index, f 36;
 #X obj 263 523 loadbang;
 #X obj 50 701 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
@@ -749,8 +747,7 @@
 #X restore 65 758 pd Preset-1;
 #X msg 263 542 4;
 #X text 65 623 EncSwitch resets preset to inital state;
-#X obj 741 44 cnv 15 270 175 empty empty Switch1/Knob1 20 12 0 14 #dfdfdf
-#202020 0;
+#X obj 741 44 cnv 15 270 175 empty empty Switch1/Knob1 20 12 0 14 #dfdfdf #202020 0;
 #X obj 761 93 switch_index;
 #X obj 761 162 + 1;
 #X text 787 162 add 1 to skip the 'all off' state;
@@ -800,8 +797,7 @@
 #X connect 18 0 8 0;
 #X connect 19 0 3 0;
 #X restore 769 117 pd knob1-control;
-#X obj 1053 45 cnv 15 270 175 empty empty Switch2/Knob2 20 12 0 14
-#dfdfdf #202020 0;
+#X obj 1053 45 cnv 15 270 175 empty empty Switch2/Knob2 20 12 0 14 #dfdfdf #202020 0;
 #X obj 1073 94 switch_index;
 #X obj 1073 163 + 1;
 #X text 1099 163 add 1 to skip the 'all off' state;
@@ -931,10 +927,8 @@
 #X connect 23 0 3 0;
 #X connect 24 0 0 0;
 #X restore 58 585 pd PresetIndicator;
-#X obj 741 234 cnv 15 270 30 empty empty LED1 20 12 0 14 #dfdfdf #202020
-0;
-#X obj 1053 233 cnv 15 270 30 empty empty LED2 20 12 0 14 #dfdfdf #202020
-0;
+#X obj 741 234 cnv 15 270 30 empty empty LED1 20 12 0 14 #dfdfdf #202020 0;
+#X obj 1053 233 cnv 15 270 30 empty empty LED2 20 12 0 14 #dfdfdf #202020 0;
 #X text 759 196 LED write occurs in |pd PresetIndicator|;
 #X text 1071 197 LED write occurs in |pd PresetIndicator|;
 #N canvas 781 397 304 195 led1_Output 0;
