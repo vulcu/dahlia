@@ -34,15 +34,38 @@ elif [[ $# -gt 1 ]]; then
     printf "\n\e[31mError: Too many generator targets!\e[0m\n"
     printf "$errmsg_usage"
     return 1 2> /dev/null || exit 1
+elif [[ $1 == "clean" ]]; then
+    printf "\nCleaning up previous builds for ALL targets..."
+    # completely clean all previous generator output
+    if [ -d ./src ] && [ "$(ls -A ./src)" ] ; then         
+        rm -r src/*
+    fi
+    printf "done!\n\n"
+    return 0 2> /dev/null || exit 0
 else
+    printf "\nCleaning up previous builds for this target...\n"
+
+    # clean up generator output related to a specific target
     if [[ $1 == "daisy" ]]; then
         pd_filename=main_$1
         meta="-m dahlia-daisy.json"
         gen="daisy"
+        if [ -d ./src/daisy ]; then
+            rm -r src/daisy
+        fi
     elif [[ $1 == "dpf" ]]; then
         pd_filename=main_$1
         meta="-m dahlia-dpf.json"
         gen="dpf"
+        if [ -d ./src/plugin ]; then
+            rm -r src/plugin
+        fi
+        if [ -f ./src/Makefile ]; then
+            rm src/Makefile
+        fi
+        if [ -f ./src/README.md ]; then
+            rm src/README.md
+        fi
     elif [[ $1 == "webaudio" ]]; then
         pd_filename=main_$1
         meta=""
@@ -52,21 +75,11 @@ else
         printf "$errmsg_usage"
         return 1 2> /dev/null || exit 1
     fi
-fi
 
-printf "\nCleaning up previous builds...\n"
-rm -r src/ir && rm -r src/hv && rm -r src/c
-if [ -d src/daisy ]; then
-    rm -r src/daisy
-fi
-if [ -d src/plugin ]; then
-    rm -r src/plugin
-fi
-if [ -f src/Makefile ]; then
-    rm src/Makefile
-fi
-if [ -f src/README.md ]; then
-    rm src/README.md
+    # clean up common hvcc directories generated for every target
+    if [ -d ./src/hv ]; then  
+        rm -r src/ir && rm -r src/hv && rm -r src/c
+    fi
 fi
 
 printf "Building Dahlia via hvcc...\n"
