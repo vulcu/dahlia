@@ -26,8 +26,9 @@ The goal of this project is to provide a quick and simple way for a user to dial
 ## Features
 
 * Monophonic (1 Voice) and Polyphonic (8-voices)
-  * Polyphonic version easily adaptable to _N_ number of voices depending desired performance
-  * Portamento control (monophonic only)
+  * Polyphonic version easily adaptable to _N_ number of voices based on system resources
+  * Monophonic version has midi-adjustable portamento control
+  * Lightweight `|miniphonic|` monophonic voice for resource-constrained applications
 * 7 Oscillators, 1 ADSR, and 2 ADS envelopes per-voice
 * Oscillators selectable between Sine, Saw, and a PWM with a 5%-50% automatable duty-cycle
 * 6 different waveshaping algorithms and a Gain control
@@ -45,7 +46,7 @@ The goal of this project is to provide a quick and simple way for a user to dial
   * ~~Redesign UI for Daisy Pod~~
     * ~~Daisy Pod UI simulator~~
   * ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
-  * Design a new voice for the Daisy platform with lower complexity, enabling it to fit within the current 128 kB memory limit.
+  * ~~Design a new voice for the Daisy platform with lower complexity~~
 * **Distrho Plugin Framework**
   * ~~Refactor `main_dpf.pd` to target DPF build~~
   * ~~Build script targeting DPF (HVCC)~~
