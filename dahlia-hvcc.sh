@@ -43,7 +43,7 @@ elif [[ $1 == "clean" ]]; then
     printf "done!\n\n"
     return 0 2> /dev/null || exit 0
 else
-    printf "\nCleaning up previous builds for this target...\n"
+    printf "\nCleaning up previous generator output for this target...\n"
 
     # clean up generator output related to a specific target
     if [[ $1 == "daisy" ]]; then
@@ -70,6 +70,16 @@ else
         pd_filename=main_$1
         meta=""
         gen="js"
+        case :$PATH: in
+            *:$PWD/lib/emsdk:*) 
+                # EMSDK environment variables are already set so do nothing
+                ;;
+            *)
+                printf "\e[33mWarning:\e[0m EMSDK environment is not set! Running environment setup...\n"
+                exe source ./lib/emsdk/emsdk_env.sh
+                printf "\n"
+                ;;
+        esac
     else
         printf "\n\e[31mError: Unrecognized generator target!\e[0m\n"
         printf "$errmsg_usage"
