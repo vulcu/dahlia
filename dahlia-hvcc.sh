@@ -11,10 +11,20 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     activation_script_directory=Scripts
 fi
 
-#echo executed command to the shell
+# echo executed command to the shell
 exe() {
     printf "\e[36m++ $(echo "$@")\e[0m\n"
     "$@"
+}
+
+# clean all output located in the 'src/' dircectory
+cleanall() {
+    printf "\nCleaning up previous builds for ALL targets..."
+    # completely clean all previous generator output
+    if [ -d ./src ] && [ "$(ls -A ./src)" ] ; then         
+        rm -r src/*
+    fi
+    printf "done!\n"
 }
 
 # HVCC build arguments
@@ -27,20 +37,22 @@ copyright="Copyright Winry Litwa-Vulcu 2021-2023 and Licensed under GPL-3.0"
 errmsg_usage="\e[30mUsage is ./dahlia-hvcc.sh [ daisy | dpf | webaudio ]\e[0m\n\n"
 
 if [[ $# -eq 0 ]]; then
-    printf "\n\e[31mError: Generator target not specified!\e[0m\n"
-    printf "$errmsg_usage"
-    return 1 2> /dev/null || exit 1
+    printf "\n\e[32mGenerator not specified, building Heavy Lang only...\e[0m"
+    cleanall
+    pd_filename="main_hvcc"
+    printf "Building Dahlia via hvcc...\n"
+    source  ./.venv/$activation_script_directory/activate
+    exe hvcc ./pd/$pd_filename.pd -o $out_dir -p $search_paths -n $name -v --copyright "$copyright"
+    deactivate
+    printf "\e[32mBuild Completed! If there are no errors above, the generated source files are located in $out_dir\e[0m\n\n"
+    return 0 2> /dev/null || exit 0
 elif [[ $# -gt 1 ]]; then
     printf "\n\e[31mError: Too many generator targets!\e[0m\n"
     printf "$errmsg_usage"
     return 1 2> /dev/null || exit 1
 elif [[ $1 == "clean" ]]; then
-    printf "\nCleaning up previous builds for ALL targets..."
-    # completely clean all previous generator output
-    if [ -d ./src ] && [ "$(ls -A ./src)" ] ; then         
-        rm -r src/*
-    fi
-    printf "done!\n\n"
+    cleanall
+    printf "\n"
     return 0 2> /dev/null || exit 0
 else
     printf "\nCleaning up previous generator output for this target...\n"
@@ -54,7 +66,7 @@ else
             rm -r src/daisy
         fi
     elif [[ $1 == "dpf" ]]; then
-        pd_filename=main_$1
+        pd_filename=main_hvcc
         meta="-m dahlia-dpf.json"
         gen="dpf"
         if [ -d ./src/plugin ]; then
@@ -67,7 +79,7 @@ else
             rm src/README.md
         fi
     elif [[ $1 == "webaudio" ]]; then
-        pd_filename=main_$1
+        pd_filename=main_hvcc
         meta=""
         gen="js"
         case :$PATH: in
