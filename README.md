@@ -9,9 +9,10 @@
 * [General Info](#general-info)
 * [Features](#features)
 * [User Interface](/docs/01.ui-configurations.md#dahlia-user-interface-configurations)
-* [Installation (Daisy)](/docs/02.1.setup.daisy.md#installation--setup-daisy)
-* [Installation (DPF)](/docs/02.2.setup.dpf.md#installation--setup-distrho-plugin-framework)
-* [Installation (Javascript)](/docs/02.3.setup.javascript.md#installation--setup-distrho-plugin-framework)
+* [Installation (Dahlia)](/docs/02.1.setup.dahlia.md#installation--setup-dahlia-python--hvcc)
+* [Installation (Daisy)](/docs/02.2.setup.daisy.md#installation--setup-daisy)
+* [Installation (DPF)](/docs/02.3.setup.dpf.md#installation--setup-distrho-plugin-framework)
+* [Installation (Javascript)](/docs/02.4.setup.javascript.md#installation--setup-distrho-plugin-framework)
 * [Algorithms](/docs/03.algorithms.md)
 * [References](/docs/04.references.md)
 
@@ -40,7 +41,11 @@ The goal of this project is to provide a quick and simple way for a user to dial
 * ~~Pre-development planning~~
 * **General**
   * ~~Refactor PD source for HVCC compatibility~~
-  * Update docs with details of Daisy POD UI functions/feedback
+  * ~~Update docs with details of UI functions/feedback~~
+  * Include separate install/build documentation for each Dahlia target
+  * Look into Daisy memory limitation ('size' argument) bug
+    * check if issue is addressed in a newer release
+    * check if issue is caused by a linker file error
 * **Daisy**
   * ~~Refactor `main_daisy.pd` to target Daisy build~~
   * ~~Redesign UI for Daisy Pod~~
@@ -48,11 +53,11 @@ The goal of this project is to provide a quick and simple way for a user to dial
   * ~~Build scripts targeting Daisy (HVCC and pd2dsy)~~
   * ~~Design a new voice for the Daisy platform with lower complexity~~
 * **Distrho Plugin Framework**
-  * ~~Refactor `main_dpf.pd` to target DPF build~~
+  * ~~Refactor `main_dpf.pd` to target a DPF build~~
   * ~~Build script targeting DPF (HVCC)~~
 * **Javascript**
-  * Refactor `main_js.pd` to target Javascript/WebAudio build
-  * Build script targeting Javascript/WebAudio (HVCC)
+  * ~~Refactor `main_js.pd` to target a Javascript/WebAudio build~~
+  * ~~Build script targeting Javascript/WebAudio (HVCC)~~
 
 **Status: This project is in active development**
 
