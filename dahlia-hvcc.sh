@@ -78,7 +78,7 @@ else
         if [ -f ./src/README.md ]; then
             rm src/README.md
         fi
-    elif [[ $1 == "webaudio" ]]; then
+    elif [[ $1 == "js" ]]; then
         pd_filename=main_hvcc
         meta=""
         gen="js"
