@@ -4,8 +4,8 @@
 # Python Virtual Environment
 .venv/
 
-# HVCC Generated Intermediary and Source Files
-src/
+# HVCC Generated Intermediary and Build Files
+gen/
 
 # VSCode Workspace Configuration
 .vscode/
