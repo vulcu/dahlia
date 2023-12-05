@@ -43,9 +43,10 @@ The goal of this project is to provide a quick and simple way for a user to dial
   * ~~Refactor PD source for HVCC compatibility~~
   * ~~Update docs with details of UI functions/feedback~~
   * Include separate install/build documentation for each Dahlia target
-  * Look into Daisy memory limitation ('size' argument) bug
+  * Research the Daisy memory limitation ('size' argument) bug
     * check if issue is addressed in a newer release
     * check if issue is caused by a linker file error
+  * Research customization options for DPF and/or Javascript UI, to replace the auto-generated one
 * **Daisy**
   * ~~Refactor `main_daisy.pd` to target Daisy build~~
   * ~~Redesign UI for Daisy Pod~~
@@ -59,7 +60,7 @@ The goal of this project is to provide a quick and simple way for a user to dial
   * ~~Refactor `main_js.pd` to target a Javascript/WebAudio build~~
   * ~~Build script targeting Javascript/WebAudio (HVCC)~~
 
-**Status: This project is in active development**
+**Status: This project is not in active development, but may resume in the future.**
 
 <br>
 (C) 2021-2023, Winry R. Litwa-Vulcu
