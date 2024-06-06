@@ -1,0 +1,23 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+name: Release
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
