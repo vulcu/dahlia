@@ -36,7 +36,7 @@ All code should be added to the relevant directory, e.g for Pure Data files this
 
 ### Documentation
 
-- All commit require a message, and this message must adhere to [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) formatting.
+- All commits require a message, and this message must adhere to [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) formatting.
 - All contributions require written documentation or will be automatically rejected.
 - All pull requests require a summary of changes and reason for changes.
 - Written documentation should be in the form of code comments, `*.md` markdown files conforming this [style guide](https://google.github.io/styleguide/docguide/style.html), or both.
