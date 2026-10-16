@@ -32,7 +32,7 @@ To confirm linting locally, run:
 
 ## Adding files
 
-All code should be added to the relevant directory, e.g for Pure Data files this would be `dahlia/src/pd/<filename>.pd`.
+All code should be added to the relevant directory, e.g for Pure Data files this would be `dahlia/src/pd/[filename].pd`.
 
 ### Documentation
 
@@ -48,6 +48,6 @@ Images do not have to be optimized, however they should be of a reasonable files
 You can add as many images as you like. The first image will be used as
 the featured image at the top of the recipe and as the thumbnail image.
 
-- Add images to `kicad-projects/[project]/images/[image-name][-##].jpg`
+- Add images to the `img` directory in this format: `dahlia/docs/img/[image-name][-##].jpg`
 - Each image must have [alt text](https://www.w3.org/WAI/tutorials/images/informative/#example-2-images-used-to-supplement-other-information).
 - Images may optionally have a photographer, source, and/or [license](https://spdx.org/licenses/).
