@@ -1,7 +1,7 @@
 # Contributing
 
-All contributions require a pull request. Only rebase merges are supported.
-This project prioritizes computational efficiency and minimal memory size, for use with embedded systems.
+All contributions require a pull request. Only rebase merges are supported. This project prioritizes computational efficiency and minimal memory size, for use with embedded systems.
+
 All Pure Data contributions must be Pure Data vanilla compatible, and contributions requiring external Pure Data libraries will be rejected.
 
 ## Getting Started
@@ -19,7 +19,7 @@ git clone git@github.com:vulcu/dahlia.git
 ### Install Dependencies
 
 After cloning the repo, navigate to the directory you cloned it into and follow
-the [these steps](https://github.com/vulcu/dahlia/blob/main/docs/02.1.setup.dahlia.md#installation--setup-dahlia-python--hvcc) to install the required dependencies and libraries.
+the [these steps:](https://github.com/vulcu/dahlia/blob/main/docs/02.1.setup.dahlia.md#installation--setup-dahlia-python--hvcc) to install the required dependencies and libraries.
 
 ### Linting
 
@@ -49,5 +49,3 @@ the featured image at the top of the recipe and as the thumbnail image.
 - Add images to `kicad-projects/[project]/images/[image-name][-##].jpg`
 - Each image must have [alt text](https://www.w3.org/WAI/tutorials/images/informative/#example-2-images-used-to-supplement-other-information).
 - Images may optionally have a photographer, source, and/or [license](https://spdx.org/licenses/).
-
-### Required and Optional Details
